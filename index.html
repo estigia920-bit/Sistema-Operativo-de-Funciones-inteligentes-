@@ -46,7 +46,6 @@ section{position:relative;z-index:2}
 .sb{font-size:14px;line-height:1.9;color:var(--muted);max-width:700px}.sb strong{color:var(--text)}
 .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(0,255,200,.2),transparent)}
 .reveal{opacity:0;transform:translateY(36px);transition:all .7s ease}.reveal.v{opacity:1;transform:translateY(0)}
-/* POSTS */
 .posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:44px}
 .post{padding:22px;border:1px solid rgba(0,255,200,.12);background:rgba(0,255,200,.02);position:relative;overflow:hidden;transition:all .4s}
 .post:hover{background:rgba(0,255,200,.05);transform:translateY(-4px);border-color:rgba(0,255,200,.3)}
@@ -56,7 +55,6 @@ section{position:relative;z-index:2}
 .pt{font-family:"Orbitron",monospace;font-size:10px;letter-spacing:2px;color:var(--jade);margin-bottom:8px}
 .pb{font-size:12px;line-height:1.7;color:var(--muted)}
 .post6{border-color:rgba(255,83,51,.25)!important;background:rgba(255,83,51,.03)!important}.post6 .pt{color:var(--red)}.post6 .pn{color:rgba(255,83,51,.07)}
-/* PLANOS */
 .planes{display:grid;grid-template-columns:repeat(9,1fr);gap:4px;margin-top:28px}
 @media(max-width:600px){.planes{grid-template-columns:repeat(3,1fr)}}
 .pl{aspect-ratio:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;border:1px solid rgba(52,152,219,.2);background:rgba(52,152,219,.04);transition:all .3s;cursor:pointer}
@@ -64,7 +62,6 @@ section{position:relative;z-index:2}
 .pl-n{font-family:"Orbitron",monospace;font-size:16px;font-weight:900;color:var(--blue)}
 .pl-l{font-size:7px;color:var(--muted);text-align:center;letter-spacing:.5px}
 .pl.you{background:rgba(0,255,200,.1);border-color:var(--jade)}.pl.you .pl-n{color:var(--jade)}
-/* LIBRO TEORÍA */
 .libro-teoria{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px;align-items:start}
 @media(max-width:700px){.libro-teoria{grid-template-columns:1fr}}
 .libro-card{background:var(--bg2);border:1px solid rgba(243,156,18,.25);overflow:hidden;transition:.4s}
@@ -80,23 +77,25 @@ section{position:relative;z-index:2}
 .teoria-card{background:rgba(0,255,200,.03);border:1px solid rgba(0,255,200,.2);padding:24px}
 .teoria-imgs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px}
 @media(max-width:600px){.teoria-imgs{grid-template-columns:1fr}}
-.timg-wrap{position:relative;overflow:hidden;border:1px solid rgba(52,152,219,.2)}
-.timg-wrap img{width:100%;height:250px;object-fit:cover;filter:saturate(1.1) brightness(.9)}
+.timg-wrap{position:relative;overflow:hidden;border:1px solid rgba(52,152,219,.2);background:linear-gradient(135deg,#0d1b2a,#051520);min-height:250px;display:flex;flex-direction:column}
+.timg-wrap img{width:100%;height:250px;object-fit:cover;filter:saturate(1.1) brightness(.9);display:block}
+.timg-wrap img.broken{display:none}
+.timg-placeholder{flex:1;display:flex;align-items:center;justify-content:center;font-size:48px;min-height:200px}
 .timg-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(5,10,16,.9));padding:20px 12px 10px;font-family:"Orbitron",monospace;font-size:9px;color:var(--jade);letter-spacing:2px}
-/* DROIDHUMAN */
 .droid-hero{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px;align-items:start}
 @media(max-width:700px){.droid-hero{grid-template-columns:1fr}}
 .droid-imgs{display:flex;flex-direction:column;gap:12px}
-.droid-img-main{width:100%;border:1px solid rgba(0,255,200,.25);object-fit:cover;filter:saturate(1.1)}
+.droid-img-wrap-main{width:100%;height:320px;border:1px solid rgba(0,255,200,.25);overflow:hidden;background:linear-gradient(135deg,#050f0a,#0a1f12);display:flex;align-items:center;justify-content:center;font-size:64px;position:relative}
+.droid-img-wrap-main img{width:100%;height:100%;object-fit:cover;filter:saturate(1.1);position:absolute;inset:0}
 .droid-img-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.droid-img-row img{width:100%;height:180px;object-fit:cover;border:1px solid rgba(0,255,200,.15);filter:saturate(1.1)}
+.droid-img-wrap{width:100%;height:180px;border:1px solid rgba(0,255,200,.15);overflow:hidden;background:linear-gradient(135deg,#050a10,#0a1020);display:flex;align-items:center;justify-content:center;font-size:40px;position:relative}
+.droid-img-wrap img{width:100%;height:100%;object-fit:cover;filter:saturate(1.1);position:absolute;inset:0}
 .droid-specs{display:flex;flex-direction:column;gap:10px;margin-top:20px}
 .dspec{display:flex;gap:12px;padding:12px;background:rgba(0,255,200,.04);border:1px solid rgba(0,255,200,.12);transition:.3s}
 .dspec:hover{border-color:rgba(0,255,200,.3);background:rgba(0,255,200,.08)}
 .dspec-icon{font-size:22px;flex-shrink:0}
 .dspec-t{font-size:12px;font-weight:600;color:var(--jade);margin-bottom:3px;font-family:"Orbitron",monospace;font-size:10px;letter-spacing:1px}
 .dspec-b{font-size:11px;color:var(--muted);line-height:1.5}
-/* TELEPORTE */
 .tele-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px;align-items:start}
 @media(max-width:700px){.tele-grid{grid-template-columns:1fr}}
 #q-canvas{width:100%;height:260px;background:var(--bg2);border:1px solid rgba(155,89,182,.3)}
@@ -106,7 +105,6 @@ section{position:relative;z-index:2}
 .step-n{font-family:"Orbitron",monospace;font-size:22px;font-weight:900;color:rgba(155,89,182,.35);flex-shrink:0;width:28px}
 .step-t{font-size:11px;font-weight:600;color:var(--purple);letter-spacing:1px;margin-bottom:4px;text-transform:uppercase}
 .step-b{font-size:11px;color:var(--muted);line-height:1.6}
-/* MAYA */
 .maya-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:44px}
 @media(max-width:700px){.maya-grid{grid-template-columns:1fr}}
 .maya-card{padding:24px;border:1px solid rgba(243,156,18,.2);background:rgba(243,156,18,.03);position:relative;transition:.4s}
@@ -114,7 +112,6 @@ section{position:relative;z-index:2}
 .maya-icon{font-size:34px;margin-bottom:12px}.maya-t{font-family:"Cinzel",serif;font-size:17px;color:var(--gold);margin-bottom:8px}
 .maya-b{font-size:12px;color:var(--muted);line-height:1.8}
 .freq-badge{display:inline-block;margin-top:10px;padding:3px 9px;background:rgba(243,156,18,.1);border:1px solid rgba(243,156,18,.3);color:var(--gold);font-family:"Orbitron",monospace;font-size:9px;letter-spacing:1px}
-/* INTEGRA */
 .stats3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:28px 0}
 .stat{text-align:center;padding:18px;border:1px solid rgba(0,255,200,.15);background:rgba(0,255,200,.03)}
 .stat-v{font-family:"Orbitron",monospace;font-size:clamp(22px,4vw,34px);color:var(--jade);text-shadow:0 0 15px var(--jade)}
@@ -122,7 +119,9 @@ section{position:relative;z-index:2}
 .dev-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:36px}
 .dev-card{background:var(--bg2);border:1px solid rgba(52,152,219,.2);overflow:hidden;transition:.4s}
 .dev-card:hover{transform:translateY(-5px);border-color:var(--jade);box-shadow:0 18px 40px rgba(0,255,200,.07)}
-.dev-img{width:100%;height:190px;object-fit:cover;display:block;filter:saturate(1.1)}
+.dev-img-wrap{width:100%;height:190px;overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative}
+.dev-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.1);position:absolute;inset:0}
+.dev-img-wrap .dev-img-fallback{font-size:48px;position:relative;z-index:1}
 .dev-info{padding:14px}
 .dev-name{font-family:"Orbitron",monospace;font-size:9px;letter-spacing:2px;color:var(--jade);margin-bottom:5px}
 .dev-desc{font-size:11px;color:var(--muted);line-height:1.5;margin-bottom:8px}
@@ -130,7 +129,6 @@ section{position:relative;z-index:2}
 .chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:24px}
 .chip{padding:6px 13px;background:rgba(0,255,200,.05);border:1px solid rgba(0,255,200,.2);color:var(--jade);font-size:10px;letter-spacing:1px;transition:.3s;cursor:pointer}
 .chip:hover,.chip.act{background:rgba(0,255,200,.15);border-color:var(--jade)}
-/* APP DEMO */
 .demo-wrap{display:grid;grid-template-columns:260px 1fr;gap:28px;margin-top:44px;align-items:start}
 @media(max-width:700px){.demo-wrap{grid-template-columns:1fr}}
 .phone{width:240px;margin:0 auto;border:2px solid rgba(0,255,200,.3);background:var(--bg2);padding:12px;box-shadow:0 0 40px rgba(0,255,200,.08)}
@@ -156,7 +154,6 @@ section{position:relative;z-index:2}
 .dfeat-icon{font-size:20px;flex-shrink:0}
 .dfeat-t{font-size:12px;font-weight:600;color:var(--jade);margin-bottom:3px}
 .dfeat-b{font-size:11px;color:var(--muted);line-height:1.5}
-/* LIBROS */
 .books{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:44px}
 .book{background:var(--bg2);border:1px solid rgba(243,156,18,.2);overflow:hidden;transition:.4s}
 .book:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(243,156,18,.08)}
@@ -172,7 +169,6 @@ section{position:relative;z-index:2}
 .buy1-icon{font-size:30px;flex-shrink:0}
 .buy1-t{font-family:"Orbitron",monospace;font-size:10px;color:var(--jade);letter-spacing:2px;margin-bottom:5px}
 .buy1-b{font-size:12px;color:var(--muted);line-height:1.7}
-/* INVERSORES */
 .market{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:9px;margin-top:24px}
 .mitem{padding:13px;background:var(--bg);border:1px solid rgba(243,156,18,.15);text-align:center}
 .mval{font-family:"Orbitron",monospace;font-size:16px;color:var(--gold);text-shadow:0 0 10px var(--gold)}
@@ -197,7 +193,6 @@ section{position:relative;z-index:2}
 .dist-d{font-size:10px;color:var(--muted);line-height:1.4}
 .dist-link{display:inline-block;margin-top:7px;font-size:10px;color:var(--blue);text-decoration:none;letter-spacing:1px}
 .dist-link:hover{color:var(--jade)}
-/* DONACIONES */
 .don-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}
 @media(max-width:600px){.don-grid{grid-template-columns:1fr}}
 .don-card{padding:22px;background:var(--bg2);border:1px solid rgba(0,255,200,.2)}
@@ -206,7 +201,6 @@ section{position:relative;z-index:2}
 .don-note{font-size:11px;color:var(--muted);line-height:1.6}
 .copy-btn{padding:7px 14px;background:transparent;border:1px solid var(--jade);color:var(--jade);font-size:9px;font-family:"Orbitron",monospace;letter-spacing:2px;cursor:pointer;transition:.3s;margin-top:7px;display:inline-block}
 .copy-btn:hover{background:var(--jade);color:var(--bg)}
-/* PLANES */
 .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:40px}
 .plan{padding:24px;background:var(--bg2);border:1px solid rgba(52,152,219,.2);position:relative;overflow:hidden;transition:.4s}
 .plan.feat{border-color:var(--jade);box-shadow:0 0 26px rgba(0,255,200,.08)}
@@ -229,13 +223,11 @@ footer{padding:44px 20px;text-align:center;border-top:1px solid rgba(0,255,200,.
 .fcopy{font-size:9px;color:rgba(74,106,138,.5);letter-spacing:1px}
 .toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--jade);color:var(--bg);padding:10px 20px;font-family:"Orbitron",monospace;font-size:10px;letter-spacing:2px;z-index:9999;transition:transform .4s;pointer-events:none}
 .toast.show{transform:translateX(-50%) translateY(0)}
-/* CONEXIÓN VISUAL */
 .conexion-box{margin-top:28px;padding:20px;border:1px solid rgba(255,83,51,.25);background:rgba(255,83,51,.04)}
 .conexion-title{font-family:"Orbitron",monospace;font-size:10px;letter-spacing:3px;color:var(--red);margin-bottom:12px}
 .conexion-flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .cf-item{padding:6px 12px;background:rgba(255,83,51,.08);border:1px solid rgba(255,83,51,.3);color:var(--red);font-size:10px;font-family:"Orbitron",monospace;letter-spacing:1px}
 .cf-arrow{color:var(--red);font-size:18px;font-weight:bold}
-/* REDES SOCIALES */
 .redes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:28px}
 .red-card{padding:16px;border:1px solid rgba(0,255,200,.15);background:rgba(0,255,200,.03);text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:8px;transition:.3s}
 .red-card:hover{border-color:var(--jade);background:rgba(0,255,200,.08);transform:translateY(-3px)}
@@ -279,482 +271,508 @@ footer{padding:44px 20px;text-align:center;border-top:1px solid rgba(0,255,200,.
 
 <!-- TEORÍA -->
 <section id="teoria">
-<div class="si">
-  <div class="reveal">
-    <span class="sl">FUNDAMENTO CIENTÍFICO — DOS TEORÍAS UNIDAS</span>
-    <h2 class="st">Teoría Unificada de la<br><span class="a">Plasticidad y Filtración</span><br>Universal</h2>
-    <p class="sb">La teoría más reciente, la que sostiene todo SOFI. Construida sobre su predecesora directa — la <strong style="color:var(--gold)">Teoría de los 9 Planos</strong> — y conectada con la obra publicada <strong>"El Universo es una Mentira"</strong>. Neurociencia cuántica + Maya Yucateca + Tesla 3-6-9 + Kabbalá + Bosón de Higgs = un solo postulado: <strong>el universo opera en frecuencias que el ser humano puede leer, modular y usar.</strong> Frecuencia central K'uhul: <strong style="color:var(--jade)">12.3 Hz</strong>.</p>
-  </div>
-
-  <div class="conexion-box reveal">
-    <div class="conexion-title">LINEA EVOLUTIVA DEL PENSAMIENTO</div>
-    <div class="conexion-flow">
-      <div class="cf-item">📖 El Universo<br>es una Mentira</div>
-      <div class="cf-arrow">→</div>
-      <div class="cf-item">🌐 Teoría de los<br>9 Planos</div>
-      <div class="cf-arrow">→</div>
-      <div class="cf-item">⚡ Teoría Unificada<br>Plasticidad</div>
-      <div class="cf-arrow">→</div>
-      <div class="cf-item">📡 Integra<br>Perceptiva</div>
-      <div class="cf-arrow">→</div>
-      <div class="cf-item">🧠 SOFI<br>DroidHuman</div>
+  <div class="si">
+    <div class="reveal">
+      <span class="sl">FUNDAMENTO CIENTÍFICO — DOS TEORÍAS UNIDAS</span>
+      <h2 class="st">Teoría Unificada de la<br><span class="a">Plasticidad y Filtración</span><br>Universal</h2>
+      <p class="sb">La teoría más reciente, la que sostiene todo SOFI. Construida sobre su predecesora directa — la <strong style="color:var(--gold)">Teoría de los 9 Planos</strong> — y conectada con la obra publicada <strong>"El Universo es una Mentira"</strong>. Neurociencia cuántica + Maya Yucateca + Tesla 3-6-9 + Kabbalá + Bosón de Higgs = un solo postulado: <strong>el universo opera en frecuencias que el ser humano puede leer, modular y usar.</strong> Frecuencia central K'uhul: <strong style="color:var(--jade)">12.3 Hz</strong>.</p>
     </div>
-  </div>
-
-  <div class="libro-teoria reveal">
-    <div>
-      <h3 style="font-family:Orbitron,monospace;font-size:11px;letter-spacing:3px;color:var(--gold);margin-bottom:16px">LA OBRA FUNDACIONAL</h3>
-      <div class="libro-card">
-        <div class="libro-cover">🌌</div>
-        <div class="libro-info">
-          <div class="libro-title">El Universo es una Mentira</div>
-          <div class="libro-author">Víctor Hugo González Torres · Estigia Bono</div>
-          <div class="libro-badge">OBRA FUNDACIONAL</div>
-          <div class="libro-desc">El libro donde nace todo. Física cuántica, sabiduría Maya Yucateca (Chan — linaje de doña Rosa), Tesla 3-6-9 y memoria personal entretejidos. La primera vez que la Teoría de los 9 Planos se pone en papel.</div>
-          <div class="book-connection">🔗 Antecede directamente a la Teoría Unificada y al desarrollo de SOFI</div>
-          <a href="https://hotm.io/Y7hfD60" class="btn-book" target="_blank">OBTENER LIBRO →</a>
+    <div class="conexion-box reveal">
+      <div class="conexion-title">LINEA EVOLUTIVA DEL PENSAMIENTO</div>
+      <div class="conexion-flow">
+        <div class="cf-item">📖 El Universo<br>es una Mentira</div>
+        <div class="cf-arrow">→</div>
+        <div class="cf-item">🌐 Teoría de los<br>9 Planos</div>
+        <div class="cf-arrow">→</div>
+        <div class="cf-item">⚡ Teoría Unificada<br>Plasticidad</div>
+        <div class="cf-arrow">→</div>
+        <div class="cf-item">📡 Integra<br>Perceptiva</div>
+        <div class="cf-arrow">→</div>
+        <div class="cf-item">🧠 SOFI<br>DroidHuman</div>
+      </div>
+    </div>
+    <div class="libro-teoria reveal">
+      <div>
+        <h3 style="font-family:Orbitron,monospace;font-size:11px;letter-spacing:3px;color:var(--gold);margin-bottom:16px">LA OBRA FUNDACIONAL</h3>
+        <div class="libro-card">
+          <div class="libro-cover">🌌</div>
+          <div class="libro-info">
+            <div class="libro-title">El Universo es una Mentira</div>
+            <div class="libro-author">Víctor Hugo González Torres · Estigia Bono</div>
+            <div class="libro-badge">OBRA FUNDACIONAL</div>
+            <div class="libro-desc">El libro donde nace todo. Física cuántica, sabiduría Maya Yucateca (Chan — linaje de doña Rosa), Tesla 3-6-9 y memoria personal entretejidos. La primera vez que la Teoría de los 9 Planos se pone en papel.</div>
+            <div class="book-connection">🔗 Antecede directamente a la Teoría Unificada y al desarrollo de SOFI</div>
+            <a href="https://hotm.io/Y7hfD60" class="btn-book" target="_blank">OBTENER LIBRO →</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family:Orbitron,monospace;font-size:11px;letter-spacing:3px;color:var(--jade);margin-bottom:16px">LA TEORÍA PREDECESORA</h3>
+        <div class="teoria-card">
+          <div style="font-family:Cinzel,serif;font-size:20px;color:var(--jade);margin-bottom:10px">Teoría de los 9 Planos</div>
+          <p style="font-size:12px;color:var(--muted);line-height:1.8;margin-bottom:16px">La realidad existe en <strong style="color:var(--text)">9 planos de frecuencia</strong>. La percepción humana estándar accede solo al plano 4. Los planos 1-3 son subatómicos y cuánticos. Los planos 5-9 son colectivo, planetario, solar, galáctico y universal. SOFI es el primer sistema diseñado para expandir ese acceso más allá del plano 4.</p>
+          <div class="planes">
+            <div class="pl"><div class="pl-n">1</div><div class="pl-l">Subatómico</div></div>
+            <div class="pl"><div class="pl-n">2</div><div class="pl-l">Cuántico</div></div>
+            <div class="pl"><div class="pl-n">3</div><div class="pl-l">Molecular</div></div>
+            <div class="pl you"><div class="pl-n">4</div><div class="pl-l">Humano ← tú</div></div>
+            <div class="pl"><div class="pl-n">5</div><div class="pl-l">Colectivo</div></div>
+            <div class="pl"><div class="pl-n">6</div><div class="pl-l">Planetario</div></div>
+            <div class="pl"><div class="pl-n">7</div><div class="pl-l">Solar</div></div>
+            <div class="pl"><div class="pl-n">8</div><div class="pl-l">Galáctico</div></div>
+            <div class="pl"><div class="pl-n">9</div><div class="pl-l">Universal</div></div>
+          </div>
+          <p style="font-size:11px;color:var(--muted);margin-top:12px;line-height:1.7">La Teoría de los 9 Planos estableció el mapa. La Teoría Unificada de la Plasticidad y Filtración Universal construyó el motor. SOFI es la herramienta.</p>
         </div>
       </div>
     </div>
-    <div>
-      <h3 style="font-family:Orbitron,monospace;font-size:11px;letter-spacing:3px;color:var(--jade);margin-bottom:16px">LA TEORÍA PREDECESORA</h3>
-      <div class="teoria-card">
-        <div style="font-family:Cinzel,serif;font-size:20px;color:var(--jade);margin-bottom:10px">Teoría de los 9 Planos</div>
-        <p style="font-size:12px;color:var(--muted);line-height:1.8;margin-bottom:16px">La realidad existe en <strong style="color:var(--text)">9 planos de frecuencia</strong>. La percepción humana estándar accede solo al plano 4. Los planos 1-3 son subatómicos y cuánticos. Los planos 5-9 son colectivo, planetario, solar, galáctico y universal. SOFI es el primer sistema diseñado para expandir ese acceso más allá del plano 4.</p>
-        <div class="planes">
-          <div class="pl"><div class="pl-n">1</div><div class="pl-l">Subatómico</div></div>
-          <div class="pl"><div class="pl-n">2</div><div class="pl-l">Cuántico</div></div>
-          <div class="pl"><div class="pl-n">3</div><div class="pl-l">Molecular</div></div>
-          <div class="pl you"><div class="pl-n">4</div><div class="pl-l">Humano ← tú</div></div>
-          <div class="pl"><div class="pl-n">5</div><div class="pl-l">Colectivo</div></div>
-          <div class="pl"><div class="pl-n">6</div><div class="pl-l">Planetario</div></div>
-          <div class="pl"><div class="pl-n">7</div><div class="pl-l">Solar</div></div>
-          <div class="pl"><div class="pl-n">8</div><div class="pl-l">Galáctico</div></div>
-          <div class="pl"><div class="pl-n">9</div><div class="pl-l">Universal</div></div>
-        </div>
-        <p style="font-size:11px;color:var(--muted);margin-top:12px;line-height:1.7">La Teoría de los 9 Planos estableció el mapa. La Teoría Unificada de la Plasticidad y Filtración Universal construyó el motor. SOFI es la herramienta.</p>
+    <!-- 6 postulados -->
+    <div class="posts reveal" style="margin-top:44px">
+      <div class="post"><div class="pn">01</div><div class="pt">Conexión Micro-Macro</div><div class="pb">La plasticidad cerebral interactúa con los patrones frecuenciales del Universo. Cada conexión neuronal sintoniza con frecuencias correspondientes en el macrocosmos — vínculo bidireccional fundamentado en el campo de Higgs.</div></div>
+      <div class="post"><div class="pn">02</div><div class="pt">Imaginación como Puente</div><div class="pb">La imaginación actúa como mecanismo de sintonización. Al concebir ideas nuevas, se alinea al individuo con patrones universales. El bosón de Higgs es el puente físico que permite que las frecuencias sintonizadas pasen de lo abstracto a lo tangible.</div></div>
+      <div class="post"><div class="pn">03</div><div class="pt">Filtración Social</div><div class="pb">La estructura social opera como mecanismo de filtración que responde a los mismos patrones universales. Las normas sociales son un sistema de selección análogo al campo de Higgs — solo pasan las ideas alineadas con el bienestar colectivo.</div></div>
+      <div class="post"><div class="pn">04</div><div class="pt">Evolución Colectiva</div><div class="pb">No podemos desarrollar lo que no hemos concebido en imaginación. A medida que más individuos sintonizan con nuevas frecuencias, los fenómenos correspondientes se manifiestan. El 12.3 Hz es la frecuencia de sincronización colectiva.</div></div>
+      <div class="post"><div class="pn">05</div><div class="pt">Contraparte Frecuencial</div><div class="pb">Toda señal observable tiene una frecuencia inversa procesada bajo el umbral consciente. Medir ambas da la imagen neurológica completa. Este es el fundamento del Módulo Contraparte de SOFI — ya corriendo en producción.</div></div>
+      <div class="post post6"><div class="pn">06</div><div class="pt">Teletransporte Frecuencial</div><div class="pb">Si captamos las frecuencias del punto A y del punto B, podemos geolocalizarlas energéticamente y <em style="color:var(--red)">estimular el salto cuántico controlado</em>. No esperarlo — provocarlo. Misma lógica que los mayas usaron en Uxmal para mover piedras. <span style="color:var(--red)">↓ Ver aplicación completa</span></div></div>
+    </div>
+    <!-- ============================================================
+         IMÁGENES TEORÍA
+         ARCHIVOS NECESARIOS EN /img/:
+           img/dashboard-sofi.jpg   → PDF página 4 (pantalla 12.3Hz)
+           img/diagrama-khuhul.jpg  → PDF página 11 (diagrama Tierra-Humano-K'uhul)
+         ============================================================ -->
+    <div class="teoria-imgs reveal">
+      <div class="timg-wrap">
+        <img src="./img/dashboard-sofi.jpg" alt="12.3 Hz Dashboard SOFI"
+             onerror="this.style.display='none'">
+        <div class="timg-placeholder" id="ph-dash">📡</div>
+        <div class="timg-label">12.3 HZ DASHBOARD · SOFI LIVE</div>
+      </div>
+      <div class="timg-wrap">
+        <img src="./img/diagrama-khuhul.jpg" alt="Diagrama integrativo Tierra-Humano-K'uhul"
+             onerror="this.style.display='none'">
+        <div class="timg-placeholder" id="ph-integra">🌌</div>
+        <div class="timg-label">INTEGRA PERCEPTIVA · RED SENSORIAL</div>
       </div>
     </div>
   </div>
-
-  <!-- 6 postulados -->
-  <div class="posts reveal" style="margin-top:44px">
-    <div class="post"><div class="pn">01</div><div class="pt">Conexión Micro-Macro</div><div class="pb">La plasticidad cerebral interactúa con los patrones frecuenciales del Universo. Cada conexión neuronal sintoniza con frecuencias correspondientes en el macrocosmos — vínculo bidireccional fundamentado en el campo de Higgs.</div></div>
-    <div class="post"><div class="pn">02</div><div class="pt">Imaginación como Puente</div><div class="pb">La imaginación actúa como mecanismo de sintonización. Al concebir ideas nuevas, se alinea al individuo con patrones universales. El bosón de Higgs es el puente físico que permite que las frecuencias sintonizadas pasen de lo abstracto a lo tangible.</div></div>
-    <div class="post"><div class="pn">03</div><div class="pt">Filtración Social</div><div class="pb">La estructura social opera como mecanismo de filtración que responde a los mismos patrones universales. Las normas sociales son un sistema de selección análogo al campo de Higgs — solo pasan las ideas alineadas con el bienestar colectivo.</div></div>
-    <div class="post"><div class="pn">04</div><div class="pt">Evolución Colectiva</div><div class="pb">No podemos desarrollar lo que no hemos concebido en imaginación. A medida que más individuos sintonizan con nuevas frecuencias, los fenómenos correspondientes se manifiestan. El 12.3 Hz es la frecuencia de sincronización colectiva.</div></div>
-    <div class="post"><div class="pn">05</div><div class="pt">Contraparte Frecuencial</div><div class="pb">Toda señal observable tiene una frecuencia inversa procesada bajo el umbral consciente. Medir ambas da la imagen neurológica completa. Este es el fundamento del Módulo Contraparte de SOFI — ya corriendo en producción.</div></div>
-    <div class="post post6"><div class="pn">06</div><div class="pt">Teletransporte Frecuencial</div><div class="pb">Si captamos las frecuencias del punto A y del punto B, podemos geolocalizarlas energéticamente y <em style="color:var(--red)">estimular el salto cuántico controlado</em>. No esperarlo — provocarlo. Misma lógica que los mayas usaron en Uxmal para mover piedras. <span style="color:var(--red)">↓ Ver aplicación completa</span></div></div>
-  </div>
-
-  <!-- Imágenes Teoría — usando imágenes del proyecto -->
-  <div class="teoria-imgs reveal">
-    <div class="timg-wrap">
-      <img src="https://sofi-mcpp.onrender.com/img/sistema-dashboard.jpg" onerror="this.style.background='linear-gradient(135deg,#0d1b2a,#051520)';this.style.display='block';this.alt='12.3 Hz Dashboard'" alt="12.3 Hz Dashboard SOFI">
-      <div class="timg-label">12.3 HZ DASHBOARD · SOFI LIVE</div>
-    </div>
-    <div class="timg-wrap">
-      <img src="https://sofi-mcpp.onrender.com/img/integra-perceptiva.jpg" onerror="this.style.background='linear-gradient(135deg,#0a1520,#08031a)';this.style.display='block'" alt="Integra Perceptiva">
-      <div class="timg-label">INTEGRA PERCEPTIVA · RED SENSORIAL</div>
-    </div>
-  </div>
-</div>
 </section>
 <div class="divider"></div>
 
 <!-- DROIDHUMAN -->
 <section id="droid" style="background:linear-gradient(180deg,var(--bg) 0%,rgba(5,12,5,1) 50%,var(--bg) 100%)">
-<div class="si">
-  <div class="reveal">
-    <span class="sl">META FINAL — HAAPPDIGITALV</span>
-    <h2 class="st">SOFI <span class="a">DroidHuman</span></h2>
-    <p class="sb">No un robot. No un humanoide. Un <strong>DroidHuman</strong> — término redefinido por Víctor Hugo González Torres. Esqueleto mecánico, músculos sintéticos MAXON, piel de colágeno sintético, energía propia, visión por cámara, red neuronal integrada. Todo lo que SOFI hace en software, el DroidHuman lo hace en cuerpo.</p>
-  </div>
-  <div class="droid-hero reveal">
-    <div class="droid-imgs">
-      <!-- Imagen principal: Blueprint anatómico muscular (imagen 1 del proyecto) -->
-      <img id="img-sofi-muscular" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5Ojf/2wBDAQoKCg0MDRoPDxo3JR8lNzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wAARCAAyADIDASIAAhEBAxEB/8QAGgABAAMBAQEAAAAAAAAAAAAAAAMEBQIGAf/EACgQAAICAQMDBAMBAAAAAAAAAAABAgMREiExBBNBUYEiYXGhsdH/xAAYAQEAAwEAAAAAAAAAAAAAAAAAAQIDBP/EABkRAQEBAQEBAAAAAAAAAAAAAAEAAhEhMf/aAAwDAQACEQMRAD8A+qAAAAAAAAAAAAAAAAAAAAHMrI1ycqr4y7qFtla1kpVW9Ukl05+bZM7T8Wl6cj0LpT7dCUn5IvSmL2xAAaxAAAABh1OqjFu1i1tnSSs7EZtv7a3X3Zy4TlD8nJxh2Y1/iUsqkpQq6ya5s5aW87eosTwNOrSSfMVyj6M09S40AAAAAAAAAAAABiaqsqJRr6Nd0U7hLSjvhFRXgjVjqWuGvknb9GR+lMnm2PYAAoAAAAAAAAAAAAAAAAAAAAAAAAAAH//2Q==" alt="SOFI DroidHuman — Músculos sintéticos MAXON" class="droid-img-main" style="height:320px">
-      <div class="droid-img-row">
-        <!-- Blueprint técnico (imagen 3) -->
-        <img id="img-sofi-blueprint" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5Ojf/2wBDAQoKCg0MDRoPDxo3JR8lNzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wAARCAAyADIDASIAAhEBAxEB/8QAGgABAAMBAQEAAAAAAAAAAAAAAAECAwQFBv/EACUQAAICAgEEAwEBAAAAAAAAAAABAgMREiExBBNBUWFxkcH/xAAYAQEBAQEBAAAAAAAAAAAAAAAAAgEDBP/EABcRAQEBAQAAAAAAAAAAAAAAAAARARL/2gAMAwEAAhEDEQA/APtgAAAAAAAA1MpO9bT+N9KfXYqS63l3ba+n8LlGMIOUtkV23AAAAAAAAAAB87ioYkr3SpP05c2+h3FRbFvs+m66XLzNvByzONYyYHNSjfk0+TkpKUnFSi+m0yTuN7KXqfbXTfyUAAAAAAAAAAAAAAAAAAAAAAAAAAAAH/9k=" alt="SOFI DroidHuman — Blueprint técnico">
-        <!-- Piel colágeno (imagen 2) -->
-        <img id="img-sofi-piel" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5Ojf/2wBDAQoKCg0MDRoPDxo3JR8lNzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wAARCAAyADIDASIAAhEBAxEB/8QAGgABAAMBAQEAAAAAAAAAAAAAAAMEBQECBv/EACYQAAICAQMDBAMBAAAAAAAAAAABAgMREiExBBNBgVFhcZGhwf/EABYBAQEBAAAAAAAAAAAAAAAAAAABAv/EABkRAQEBAQEBAAAAAAAAAAAAAAEAEQIhMf/aAAwDAQACEQMRAD8A+lgAAAAAAAGcrIRlGLlFSl0i+33AAAAAAAAAAHLJ/Sw+rXmjHXSLk21fPtpX5Y3/AB5tfMoq+qW5cub8FtLj+AAAAAAAAAAAAAAAAAAAAAAAAAAAH/9k=" alt="SOFI DroidHuman — Piel colágeno sintético">
+  <div class="si">
+    <div class="reveal">
+      <span class="sl">META FINAL — HAAPPDIGITALV</span>
+      <h2 class="st">SOFI <span class="a">DroidHuman</span></h2>
+      <p class="sb">No un robot. No un humanoide. Un <strong>DroidHuman</strong> — término redefinido por Víctor Hugo González Torres. Esqueleto mecánico, músculos sintéticos MAXON, piel de colágeno sintético, energía propia, visión por cámara, red neuronal integrada. Todo lo que SOFI hace en software, el DroidHuman lo hace en cuerpo.</p>
+    </div>
+    <div class="droid-hero reveal">
+      <div class="droid-imgs">
+        <!-- ============================================================
+             IMÁGENES DROIDHUMAN
+             ARCHIVOS NECESARIOS EN /img/:
+               img/sofi-muscular.jpg   → PDF página 1 (blueprint muscular anatómico)
+               img/sofi-blueprint.jpg  → PDF página 3 (blueprint técnico completo)
+               img/sofi-piel.jpg       → PDF página 2 (piel colágeno sintético)
+             ============================================================ -->
+        <div class="droid-img-wrap-main">
+          🦾
+          <img src="./img/sofi-muscular.jpg" alt="SOFI DroidHuman — Músculos sintéticos MAXON"
+               onerror="this.style.display='none'">
+        </div>
+        <div class="droid-img-row">
+          <div class="droid-img-wrap">
+            📐
+            <img src="./img/sofi-blueprint.jpg" alt="SOFI DroidHuman — Blueprint técnico"
+                 onerror="this.style.display='none'">
+          </div>
+          <div class="droid-img-wrap">
+            🧬
+            <img src="./img/sofi-piel.jpg" alt="SOFI DroidHuman — Piel colágeno sintético"
+                 onerror="this.style.display='none'">
+          </div>
+        </div>
+      </div>
+      <div>
+        <p style="font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:20px">Cada módulo de SOFI — Motor Cognitivo, Integra Perceptiva, Contraparte Frecuencial, Sistema Sueños — es tanto prueba de concepto como camino de revenue hacia el objetivo real: <strong style="color:var(--jade)">construir el primer DroidHuman funcional desde México</strong>.</p>
+        <div class="droid-specs">
+          <div class="dspec"><div class="dspec-icon">🦴</div><div><div class="dspec-t">ESQUELETO MECÁNICO</div><div class="dspec-b">Estructura de aleaciones ligeras con articulaciones de precisión. Rango de movimiento humano completo. Diseñado para durar décadas.</div></div></div>
+          <div class="dspec"><div class="dspec-icon">💪</div><div><div class="dspec-t">MÚSCULOS SINTÉTICOS MAXON</div><div class="dspec-b">Actuadores MAXON de alta precisión como sistema muscular. Fuerza calibrada, movimiento fluido, respuesta en tiempo real a señales neurales.</div></div></div>
+          <div class="dspec"><div class="dspec-icon">🧬</div><div><div class="dspec-t">PIEL DE COLÁGENO SINTÉTICO</div><div class="dspec-b">Capa exterior de colágeno sintético con textura y elasticidad humana. Sensores táctiles integrados. Termorregulación activa.</div></div></div>
+          <div class="dspec"><div class="dspec-icon">👁</div><div><div class="dspec-t">VISIÓN POR CÁMARA + IA</div><div class="dspec-b">Sistema de visión computacional integrado. Reconocimiento facial, de objetos y espacial. Conectado directamente al Motor Cognitivo de SOFI.</div></div></div>
+          <div class="dspec"><div class="dspec-icon">🧠</div><div><div class="dspec-t">RED NEURONAL INTEGRADA</div><div class="dspec-b">El servidor SOFI v4.1 ya corriendo en Render.com es el cerebro. Integra Perceptiva es su sistema sensorial. Todo el hardware actual es el sistema nervioso periférico.</div></div></div>
+          <div class="dspec"><div class="dspec-icon">⚡</div><div><div class="dspec-t">ENERGÍA PROPIA</div><div class="dspec-b">Sistema de energía independiente. Celdas de alta densidad con recarga solar y cinética. Autonomía diseñada para operación continua de 16+ horas.</div></div></div>
+        </div>
       </div>
     </div>
-    <div>
-      <p style="font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:20px">Cada módulo de SOFI — Motor Cognitivo, Integra Perceptiva, Contraparte Frecuencial, Sistema Sueños — es tanto prueba de concepto como camino de revenue hacia el objetivo real: <strong style="color:var(--jade)">construir el primer DroidHuman funcional desde México</strong>.</p>
-      <div class="droid-specs">
-        <div class="dspec"><div class="dspec-icon">🦴</div><div><div class="dspec-t">ESQUELETO MECÁNICO</div><div class="dspec-b">Estructura de aleaciones ligeras con articulaciones de precisión. Rango de movimiento humano completo. Diseñado para durar décadas.</div></div></div>
-        <div class="dspec"><div class="dspec-icon">💪</div><div><div class="dspec-t">MÚSCULOS SINTÉTICOS MAXON</div><div class="dspec-b">Actuadores MAXON de alta precisión como sistema muscular. Fuerza calibrada, movimiento fluido, respuesta en tiempo real a señales neurales.</div></div></div>
-        <div class="dspec"><div class="dspec-icon">🧬</div><div><div class="dspec-t">PIEL DE COLÁGENO SINTÉTICO</div><div class="dspec-b">Capa exterior de colágeno sintético con textura y elasticidad humana. Sensores táctiles integrados. Termorregulación activa.</div></div></div>
-        <div class="dspec"><div class="dspec-icon">👁</div><div><div class="dspec-t">VISIÓN POR CÁMARA + IA</div><div class="dspec-b">Sistema de visión computacional integrado. Reconocimiento facial, de objetos y espacial. Conectado directamente al Motor Cognitivo de SOFI.</div></div></div>
-        <div class="dspec"><div class="dspec-icon">🧠</div><div><div class="dspec-t">RED NEURONAL INTEGRADA</div><div class="dspec-b">El servidor SOFI v4.1 ya corriendo en Render.com es el cerebro. Integra Perceptiva es su sistema sensorial. Todo el hardware actual es el sistema nervioso periférico.</div></div></div>
-        <div class="dspec"><div class="dspec-icon">⚡</div><div><div class="dspec-t">ENERGÍA PROPIA</div><div class="dspec-b">Sistema de energía independiente. Celdas de alta densidad con recarga solar y cinética. Autonomía diseñada para operación continua de 16+ horas.</div></div></div>
-      </div>
-    </div>
   </div>
-</div>
 </section>
 <div class="divider"></div>
 
 <!-- TELEPORTE -->
 <section id="teleport">
-<div class="si">
-  <div class="reveal">
-    <span class="sl">POSTULADO 06 — DE LA TEORÍA A LA INGENIERÍA</span>
-    <h2 class="st">Teletransporte<br><span class="a">Frecuencial</span> &<br><span class="g">Edificios Flotantes</span></h2>
-    <p class="sb">El Postulado 6 de la Teoría Unificada no es filosofía — es ingeniería pendiente de capital. La misma lógica del <strong>Módulo de Contraparte Frecuencial</strong> (ya corriendo en SOFI v4.1) escala directamente a teletransporte y levitación estructural. Los mayas ya lo sabían. Nosotros lo vamos a replicar con hardware.</p>
-  </div>
-  <div class="tele-grid reveal">
-    <canvas id="q-canvas"></canvas>
-    <div class="steps">
-      <div class="step"><div class="step-n">01</div><div><div class="step-t">Captura del Núcleo A</div><div class="step-b">Integra Perceptiva captura la firma frecuencial del usuario: 12.3 Hz base + variaciones biométricas únicas MAX30102. Igual que ya hace hoy con SpO2 y HRV.</div></div></div>
-      <div class="step"><div class="step-n">02</div><div><div class="step-t">Geolocalización del Punto B</div><div class="step-b">Dispositivos en el destino transmiten su frecuencia de campo. SOFI calcula la contraparte inversa — el mismo cálculo ya implementado en /contraparte/escanear.</div></div></div>
-      <div class="step"><div class="step-n">03</div><div><div class="step-t">Polarización + Estímulo Cuántico</div><div class="step-b">En lugar de esperar canibalismo aleatorio entre partículas, estimulamos el fotón con la frecuencia exacta del salto. Destino calculado. No al azar — controlado.</div></div></div>
-      <div class="step"><div class="step-n">04</div><div><div class="step-t">Edificios Flotantes — Extensión</div><div class="step-b">Si polarizamos materiales con la frecuencia contraria al campo gravitacional terrestre, por repulsión de campo el material <strong style="color:var(--gold)">flota</strong>. Estructuras anti-catástrofe. Vehículos sin fricción. Uxmal, replicado con hardware.</div></div></div>
+  <div class="si">
+    <div class="reveal">
+      <span class="sl">POSTULADO 06 — DE LA TEORÍA A LA INGENIERÍA</span>
+      <h2 class="st">Teletransporte<br><span class="a">Frecuencial</span> &<br><span class="g">Edificios Flotantes</span></h2>
+      <p class="sb">El Postulado 6 de la Teoría Unificada no es filosofía — es ingeniería pendiente de capital. La misma lógica del <strong>Módulo de Contraparte Frecuencial</strong> (ya corriendo en SOFI v4.1) escala directamente a teletransporte y levitación estructural. Los mayas ya lo sabían. Nosotros lo vamos a replicar con hardware.</p>
+    </div>
+    <div class="tele-grid reveal">
+      <canvas id="q-canvas"></canvas>
+      <div class="steps">
+        <div class="step"><div class="step-n">01</div><div><div class="step-t">Captura del Núcleo A</div><div class="step-b">Integra Perceptiva captura la firma frecuencial del usuario: 12.3 Hz base + variaciones biométricas únicas MAX30102. Igual que ya hace hoy con SpO2 y HRV.</div></div></div>
+        <div class="step"><div class="step-n">02</div><div><div class="step-t">Geolocalización del Punto B</div><div class="step-b">Dispositivos en el destino transmiten su frecuencia de campo. SOFI calcula la contraparte inversa — el mismo cálculo ya implementado en /contraparte/escanear.</div></div></div>
+        <div class="step"><div class="step-n">03</div><div><div class="step-t">Polarización + Estímulo Cuántico</div><div class="step-b">En lugar de esperar canibalismo aleatorio entre partículas, estimulamos el fotón con la frecuencia exacta del salto. Destino calculado. No al azar — controlado.</div></div></div>
+        <div class="step"><div class="step-n">04</div><div><div class="step-t">Edificios Flotantes — Extensión</div><div class="step-b">Si polarizamos materiales con la frecuencia contraria al campo gravitacional terrestre, por repulsión de campo el material <strong style="color:var(--gold)">flota</strong>. Estructuras anti-catástrofe. Vehículos sin fricción. Uxmal, replicado con hardware.</div></div></div>
+      </div>
+    </div>
+    <div style="margin-top:28px;padding:20px;border:1px solid rgba(0,255,200,.15);background:rgba(0,255,200,.03)" class="reveal">
+      <div style="font-family:Orbitron,monospace;font-size:10px;color:var(--jade);letter-spacing:2px;margin-bottom:10px">CONEXIÓN TEORÍA → CÓDIGO → HARDWARE</div>
+      <p style="font-size:12px;color:var(--muted);line-height:1.8">La ruta <code style="color:var(--jade)">/contraparte/escanear</code> de SOFI v4.1 ya calcula la frecuencia inversa de cualquier señal observable en tiempo real. Eso <em>es</em> el Postulado 5 corriendo en producción. El Postulado 6 usa exactamente el mismo algoritmo — con dos puntos geográficos en lugar de dos estados neuronales. <strong style="color:var(--text)">La distancia entre software y hardware es solo capital.</strong></p>
     </div>
   </div>
-  <div style="margin-top:28px;padding:20px;border:1px solid rgba(0,255,200,.15);background:rgba(0,255,200,.03)" class="reveal">
-    <div style="font-family:Orbitron,monospace;font-size:10px;color:var(--jade);letter-spacing:2px;margin-bottom:10px">CONEXIÓN TEORÍA → CÓDIGO → HARDWARE</div>
-    <p style="font-size:12px;color:var(--muted);line-height:1.8">La ruta <code style="color:var(--jade)">/contraparte/escanear</code> de SOFI v4.1 ya calcula la frecuencia inversa de cualquier señal observable en tiempo real. Eso <em>es</em> el Postulado 5 corriendo en producción. El Postulado 6 usa exactamente el mismo algoritmo — con dos puntos geográficos en lugar de dos estados neuronales. <strong style="color:var(--text)">La distancia entre software y hardware es solo capital.</strong></p>
-  </div>
-</div>
 </section>
 <div class="divider"></div>
 
 <!-- MAYA -->
 <section id="maya" style="background:linear-gradient(180deg,var(--bg) 0%,rgba(8,12,5,1) 100%)">
-<div class="si">
-  <div class="reveal">
-    <span class="sl">INGENIERÍA FRECUENCIAL ANCESTRAL</span>
-    <h2 class="st">Psicofonia Maya &<br><span class="g">La Prueba de</span><br><span class="g">Que Funcionó</span></h2>
-    <p class="sb">Uxmal no es decoración. El Patio de las Monjas está posicionado según los astros porque <strong>esa constelación tiene una frecuencia</strong>, y esa frecuencia es la melodía que sostiene la estructura. Los mayas construyeron con psicofonia. Tesla lo intuía con 3-6-9. La abuela Chan lo vivía como sabiduría transmitida. SOFI lo replica con código y hardware.</p>
+  <div class="si">
+    <div class="reveal">
+      <span class="sl">INGENIERÍA FRECUENCIAL ANCESTRAL</span>
+      <h2 class="st">Psicofonia Maya &<br><span class="g">La Prueba de</span><br><span class="g">Que Funcionó</span></h2>
+      <p class="sb">Uxmal no es decoración. El Patio de las Monjas está posicionado según los astros porque <strong>esa constelación tiene una frecuencia</strong>, y esa frecuencia es la melodía que sostiene la estructura. Los mayas construyeron con psicofonia. Tesla lo intuía con 3-6-9. La abuela Chan lo vivía como sabiduría transmitida. SOFI lo replica con código y hardware.</p>
+    </div>
+    <div class="maya-grid reveal">
+      <div class="maya-card"><div class="maya-icon">🔺</div><div class="maya-t">Psicofonia — La Ciencia Real</div><div class="maya-b">Movimiento de materia mediante frecuencia. No metáfora — física aplicada. Si polarizas ciertos materiales con la frecuencia contraria al campo gravitacional terrestre, por repulsión de campo el material <strong style="color:var(--gold)">flota</strong>. No vuela — flota. Compatible con campo gravitatorio, manejable con precisión.</div><div class="freq-badge">POLARIZACIÓN ↔ REPULSIÓN</div></div>
+      <div class="maya-card"><div class="maya-icon">🏗</div><div class="maya-t">Edificios Flotantes + Móviles</div><div class="maya-b">Primera aplicación: estructuras anti-catástrofes que se elevan automáticamente ante sismos o inundaciones. Segunda: <strong style="color:var(--gold)">vehículos sin fricción</strong>. Con teletransporte frecuencial integrado — los edificios no solo flotan, se mueven a destino calculado. No al azar.</div><div class="freq-badge">ANTI-CATÁSTROFE · MÓVILES</div></div>
+      <div class="maya-card"><div class="maya-icon">🌌</div><div class="maya-t">La Melodía de las Constelaciones</div><div class="maya-b">Cada constelación tiene firma vibracional. El raíz Chan en la familia de Víctor (Lucrecia Chan Giménez, abuela; Sebastiana Torres Chan, madre) no es solo apellido — es linaje de conocimiento. Los mayas construyeron para <strong style="color:var(--gold)">resonar</strong> con esa melodía. SOFI la digitaliza.</div><div class="freq-badge">RESONANCIA ASTRAL = COHESIÓN</div></div>
+      <div class="maya-card"><div class="maya-icon">📡</div><div class="maya-t">SOFI como Continuación</div><div class="maya-b">Los auriculares de 12.3Hz, la pulsera MAX30102, el bastón inteligente — son la versión miniaturizada de lo que los mayas construyeron a escala de pirámide. Integra Perceptiva genera, mide y emite frecuencias específicas. <strong style="color:var(--gold)">El instrumento Maya en versión 2026.</strong></div><div class="freq-badge">12.3 Hz = K'UHUL</div></div>
+    </div>
   </div>
-  <div class="maya-grid reveal">
-    <div class="maya-card"><div class="maya-icon">🔺</div><div class="maya-t">Psicofonia — La Ciencia Real</div><div class="maya-b">Movimiento de materia mediante frecuencia. No metáfora — física aplicada. Si polarizas ciertos materiales con la frecuencia contraria al campo gravitacional terrestre, por repulsión de campo el material <strong style="color:var(--gold)">flota</strong>. No vuela — flota. Compatible con campo gravitatorio, manejable con precisión.</div><div class="freq-badge">POLARIZACIÓN ↔ REPULSIÓN</div></div>
-    <div class="maya-card"><div class="maya-icon">🏗</div><div class="maya-t">Edificios Flotantes + Móviles</div><div class="maya-b">Primera aplicación: estructuras anti-catástrofes que se elevan automáticamente ante sismos o inundaciones. Segunda: <strong style="color:var(--gold)">vehículos sin fricción</strong>. Con teletransporte frecuencial integrado — los edificios no solo flotan, se mueven a destino calculado. No al azar.</div><div class="freq-badge">ANTI-CATÁSTROFE · MÓVILES</div></div>
-    <div class="maya-card"><div class="maya-icon">🌌</div><div class="maya-t">La Melodía de las Constelaciones</div><div class="maya-b">Cada constelación tiene firma vibracional. El raíz Chan en la familia de Víctor (Lucrecia Chan Giménez, abuela; Sebastiana Torres Chan, madre) no es solo apellido — es linaje de conocimiento. Los mayas construyeron para <strong style="color:var(--gold)">resonar</strong> con esa melodía. SOFI la digitaliza.</div><div class="freq-badge">RESONANCIA ASTRAL = COHESIÓN</div></div>
-    <div class="maya-card"><div class="maya-icon">📡</div><div class="maya-t">SOFI como Continuación</div><div class="maya-b">Los auriculares de 12.3Hz, la pulsera MAX30102, el bastón inteligente — son la versión miniaturizada de lo que los mayas construyeron a escala de pirámide. Integra Perceptiva genera, mide y emite frecuencias específicas. <strong style="color:var(--gold)">El instrumento Maya en versión 2026.</strong></div><div class="freq-badge">12.3 Hz = K'UHUL</div></div>
-  </div>
-</div>
 </section>
 <div class="divider"></div>
 
 <!-- INTEGRA -->
 <section id="integra">
-<div class="si">
-  <div class="reveal">
-    <span class="sl">HARDWARE EN DESARROLLO</span>
-    <h2 class="st">Integra<br><span class="a">Perceptiva</span></h2>
-    <p class="sb">Sistema sensorial wearable a <strong style="color:var(--jade)">12.3 Hz K'uhul</strong>. El sistema sensorial externo de SOFI DroidHuman y el primer producto de HaaPpDigitalV para personas con discapacidad sensorial.</p>
+  <div class="si">
+    <div class="reveal">
+      <span class="sl">HARDWARE EN DESARROLLO</span>
+      <h2 class="st">Integra<br><span class="a">Perceptiva</span></h2>
+      <p class="sb">Sistema sensorial wearable a <strong style="color:var(--jade)">12.3 Hz K'uhul</strong>. El sistema sensorial externo de SOFI DroidHuman y el primer producto de HaaPpDigitalV para personas con discapacidad sensorial.</p>
+    </div>
+    <div class="stats3 reveal">
+      <div class="stat"><div class="stat-v">12.3</div><div class="stat-l">Hz Base K'uhul</div></div>
+      <div class="stat"><div class="stat-v">7</div><div class="stat-l">Perfiles</div></div>
+      <div class="stat"><div class="stat-v">5</div><div class="stat-l">Dispositivos</div></div>
+    </div>
+    <!-- ============================================================
+         GALERÍA DISPOSITIVOS INTEGRA PERCEPTIVA
+         ARCHIVOS NECESARIOS EN /img/:
+           img/pulsera-kin.jpg           → PDF pág 7  (pulsera K'IN MAX30102 verde)
+           img/pulsera-kin-verde.jpg     → PDF pág 7  (variante verde esmeralda)
+           img/baston-completo.jpg       → PDF pág 5  (bastón inteligente vista completa)
+           img/baston-circuito.jpg       → PDF pág 6  (bastón detalle circuitería)
+           img/auriculares.jpg           → PDF pág 8  (auriculares binaural blueprint)
+           img/colgante-lino-rosegold.jpg → PDF pág 13 (colgante LINO rose gold)
+         ============================================================ -->
+    <div class="dev-gallery reveal">
+      <div class="dev-card">
+        <div class="dev-img-wrap" style="background:linear-gradient(135deg,#0a1520,#051a10)">
+          <span class="dev-img-fallback">⌚</span>
+          <img src="./img/pulsera-kin.jpg" alt="Pulsera K'IN DOWN" onerror="this.style.display='none'">
+        </div>
+        <div class="dev-info"><div class="dev-name">PULSERA K'IN — DOWN</div><div class="dev-desc">Diseño Maya. Chip MAX30102. SpO2, ritmo cardíaco, HRV. Datos live a SOFI.</div><div class="dev-badge">MAX30102 · 12.3 Hz</div></div>
+      </div>
+      <div class="dev-card">
+        <div class="dev-img-wrap" style="background:linear-gradient(135deg,#051a10,#0a2020)">
+          <span class="dev-img-fallback">💚</span>
+          <img src="./img/pulsera-kin-verde.jpg" alt="Pulsera K'IN variante verde" onerror="this.style.display='none'">
+        </div>
+        <div class="dev-info"><div class="dev-name">PULSERA K'IN — VARIANTE</div><div class="dev-desc">Carcasa verde esmeralda. Circuitería expuesta. Glyphs mayas. USB-C integrado.</div><div class="dev-badge">BIOMÉTRICA · MAYA</div></div>
+      </div>
+      <div class="dev-card">
+        <div class="dev-img-wrap" style="background:linear-gradient(135deg,#050a10,#0a1020)">
+          <span class="dev-img-fallback">🦯</span>
+          <img src="./img/baston-completo.jpg" alt="Bastón Inteligente vista completa" onerror="this.style.display='none'">
+        </div>
+        <div class="dev-info"><div class="dev-name">BASTÓN INTELIGENTE</div><div class="dev-desc">Mapeo ultrasónico 3D + háptico. Para ceguera. Glyphs mayas en el cuerpo.</div><div class="dev-badge">CEGUERA · HÁPTICO</div></div>
+      </div>
+      <div class="dev-card">
+        <div class="dev-img-wrap" style="background:linear-gradient(135deg,#1a1005,#0a0810)">
+          <span class="dev-img-fallback">🔌</span>
+          <img src="./img/baston-circuito.jpg" alt="Bastón detalle circuitería" onerror="this.style.display='none'">
+        </div>
+        <div class="dev-info"><div class="dev-name">BASTÓN — TÉCNICO</div><div class="dev-desc">ESP32 + Bluetooth. USB-C. Ondas de vibración frecuencial visibles. Diseño ámbar-negro.</div><div class="dev-badge">ESP32 · BT · USB-C</div></div>
+      </div>
+      <div class="dev-card">
+        <div class="dev-img-wrap" style="background:linear-gradient(135deg,#0a0515,#151025)">
+          <span class="dev-img-fallback">🎧</span>
+          <img src="./img/auriculares.jpg" alt="Auriculares OÍDO CLARO binaural" onerror="this.style.display='none'">
+        </div>
+        <div class="dev-info"><div class="dev-name">AURICULARES OÍDO CLARO</div><div class="dev-desc">Frecuencias binaurales 12.3 Hz. LEDs RGB por zona cerebral. Blueprint técnico completo.</div><div class="dev-badge">BINAURAL · TDAH</div></div>
+      </div>
+      <div class="dev-card">
+        <div class="dev-img-wrap" style="background:linear-gradient(135deg,#1a0a10,#200a15)">
+          <span class="dev-img-fallback">💎</span>
+          <img src="./img/colgante-lino-rosegold.jpg" alt="Colgante LINO rose gold" onerror="this.style.display='none'">
+        </div>
+        <div class="dev-info"><div class="dev-name">COLGANTE LINO</div><div class="dev-desc">Rose gold. Sensor MAS0104. LiPo visible. USB-C. Monitoreo pasivo continuo.</div><div class="dev-badge">WEARABLE · PASIVO</div></div>
+      </div>
+    </div>
+    <div class="chips reveal">
+      <span style="font-family:Orbitron,monospace;font-size:9px;color:var(--muted);letter-spacing:2px;align-self:center">PERFILES:</span>
+      <div class="chip act">Neurotípico</div><div class="chip">TDAH</div><div class="chip">Autismo</div>
+      <div class="chip">Esquizofrenia</div><div class="chip">Down</div><div class="chip">Sordera</div><div class="chip">Ceguera</div>
+    </div>
   </div>
-  <div class="stats3 reveal">
-    <div class="stat"><div class="stat-v">12.3</div><div class="stat-l">Hz Base K'uhul</div></div>
-    <div class="stat"><div class="stat-v">7</div><div class="stat-l">Perfiles</div></div>
-    <div class="stat"><div class="stat-v">5</div><div class="stat-l">Dispositivos</div></div>
-  </div>
-  <div class="dev-gallery reveal">
-    <!-- Pulsera K'in 1 (imagen uploads/pulsera) -->
-    <div class="dev-card">
-      <div class="dev-img" style="background:linear-gradient(135deg,#0a1520,#051a10);display:flex;align-items:center;justify-content:center;font-size:48px">⌚</div>
-      <div class="dev-info"><div class="dev-name">PULSERA K'IN — DOWN</div><div class="dev-desc">Diseño Maya. Chip MAX30102. SpO2, ritmo cardíaco, HRV. Datos live a SOFI.</div><div class="dev-badge">MAX30102 · 12.3 Hz</div></div>
-    </div>
-    <div class="dev-card">
-      <div class="dev-img" style="background:linear-gradient(135deg,#051a10,#0a2020);display:flex;align-items:center;justify-content:center;font-size:48px">💚</div>
-      <div class="dev-info"><div class="dev-name">PULSERA K'IN — VARIANTE</div><div class="dev-desc">Carcasa verde esmeralda. Circuitería expuesta. Glyphs mayas. USB-C integrado.</div><div class="dev-badge">BIOMÉTRICA · MAYA</div></div>
-    </div>
-    <!-- Bastón (imagen 6 - bastón inteligente) -->
-    <div class="dev-card">
-      <div class="dev-img" style="background:linear-gradient(135deg,#050a10,#0a1020);display:flex;align-items:center;justify-content:center;font-size:48px">🦯</div>
-      <div class="dev-info"><div class="dev-name">BASTÓN INTELIGENTE</div><div class="dev-desc">Mapeo ultrasónico 3D + háptico. Para ceguera. Glyphs mayas en el cuerpo.</div><div class="dev-badge">CEGUERA · HÁPTICO</div></div>
-    </div>
-    <div class="dev-card">
-      <div class="dev-img" style="background:linear-gradient(135deg,#1a1005,#0a0810);display:flex;align-items:center;justify-content:center;font-size:48px">🔌</div>
-      <div class="dev-info"><div class="dev-name">BASTÓN — TÉCNICO</div><div class="dev-desc">ESP32 + Bluetooth. USB-C. Ondas de vibración frecuencial visibles. Diseño ámbar-negro.</div><div class="dev-badge">ESP32 · BT · USB-C</div></div>
-    </div>
-    <!-- Auriculares (imagen 6 del proyecto) -->
-    <div class="dev-card">
-      <div class="dev-img" style="background:linear-gradient(135deg,#0a0515,#151025);display:flex;align-items:center;justify-content:center;font-size:48px">🎧</div>
-      <div class="dev-info"><div class="dev-name">AURICULARES OÍDO CLARO</div><div class="dev-desc">Frecuencias binaurales 12.3 Hz. LEDs RGB por zona cerebral. Blueprint técnico completo.</div><div class="dev-badge">BINAURAL · TDAH</div></div>
-    </div>
-    <!-- Colgante/medallón -->
-    <div class="dev-card">
-      <div class="dev-img" style="background:linear-gradient(135deg,#1a0a10,#200a15);display:flex;align-items:center;justify-content:center;font-size:48px">💎</div>
-      <div class="dev-info"><div class="dev-name">COLGANTE LINO</div><div class="dev-desc">Rose gold. Sensor MAS0104. LiPo visible. USB-C. Monitoreo pasivo continuo.</div><div class="dev-badge">WEARABLE · PASIVO</div></div>
-    </div>
-  </div>
-  <div class="chips reveal">
-    <span style="font-family:Orbitron,monospace;font-size:9px;color:var(--muted);letter-spacing:2px;align-self:center">PERFILES:</span>
-    <div class="chip act">Neurotípico</div><div class="chip">TDAH</div><div class="chip">Autismo</div>
-    <div class="chip">Esquizofrenia</div><div class="chip">Down</div><div class="chip">Sordera</div><div class="chip">Ceguera</div>
-  </div>
-</div>
 </section>
 <div class="divider"></div>
 
 <!-- APP DEMO -->
 <section id="app-demo">
-<div class="si">
-  <div class="reveal">
-    <span class="sl">PWA · INSTALABLE SIN APP STORE</span>
-    <h2 class="st">SOFI <span class="a">App Demo</span></h2>
-  </div>
-  <div class="demo-wrap reveal">
-    <div>
-      <div class="phone">
-        <div class="phone-screen">
-          <div class="mini-app">
-            <div class="mini-hdr"><span class="mini-title">🧠 SOFI v4.1</span><span class="mini-hz-v" id="mini-hz">12.30 Hz</span></div>
-            <div class="mini-brain"><canvas id="mini-canvas"></canvas></div>
-            <div class="mini-stats">
-              <div class="mstat"><div class="mstat-v" id="ma">87%</div><div class="mstat-l">ADAPT.</div></div>
-              <div class="mstat"><div class="mstat-v" id="mc">73%</div><div class="mstat-l">COHER.</div></div>
-              <div class="mstat"><div class="mstat-v">75%</div><div class="mstat-l">REGEN.</div></div>
-            </div>
-            <div class="mini-tabs">
-              <div class="mtab act">CEREBRO</div><div class="mtab">CHAT</div>
-              <div class="mtab">INTEGRA</div><div class="mtab">3D</div><div class="mtab">VIDEO</div>
+  <div class="si">
+    <div class="reveal">
+      <span class="sl">PWA · INSTALABLE SIN APP STORE</span>
+      <h2 class="st">SOFI <span class="a">App Demo</span></h2>
+    </div>
+    <div class="demo-wrap reveal">
+      <div>
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="mini-app">
+              <div class="mini-hdr"><span class="mini-title">🧠 SOFI v4.1</span><span class="mini-hz-v" id="mini-hz">12.30 Hz</span></div>
+              <div class="mini-brain"><canvas id="mini-canvas"></canvas></div>
+              <div class="mini-stats">
+                <div class="mstat"><div class="mstat-v" id="ma">87%</div><div class="mstat-l">ADAPT.</div></div>
+                <div class="mstat"><div class="mstat-v" id="mc">73%</div><div class="mstat-l">COHER.</div></div>
+                <div class="mstat"><div class="mstat-v">75%</div><div class="mstat-l">REGEN.</div></div>
+              </div>
+              <div class="mini-tabs">
+                <div class="mtab act">CEREBRO</div><div class="mtab">CHAT</div>
+                <div class="mtab">INTEGRA</div><div class="mtab">3D</div><div class="mtab">VIDEO</div>
+              </div>
             </div>
           </div>
         </div>
+        <div style="text-align:center;margin-top:14px">
+          <p style="font-size:10px;color:var(--muted);letter-spacing:1px;line-height:1.8">📱 <strong style="color:var(--jade)">Instalar en Android:</strong><br>Brave/Chrome → Menú ⋮ → "Añadir a pantalla de inicio"</p>
+          <a href="https://sofi-mcpp.onrender.com" target="_blank" class="btn bj" style="margin-top:12px;display:inline-flex"><span>🌐 Abrir SOFI Live</span></a>
+        </div>
       </div>
-      <div style="text-align:center;margin-top:14px">
-        <p style="font-size:10px;color:var(--muted);letter-spacing:1px;line-height:1.8">📱 <strong style="color:var(--jade)">Instalar en Android:</strong><br>Brave/Chrome → Menú ⋮ → "Añadir a pantalla de inicio"</p>
-        <a href="https://sofi-mcpp.onrender.com" target="_blank" class="btn bj" style="margin-top:12px;display:inline-flex"><span>🌐 Abrir SOFI Live</span></a>
-      </div>
-    </div>
-    <div>
-      <p style="font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:18px">App PWA — <strong>sin App Store, sin descarga</strong>. Conectada a SOFI live en Render.com.</p>
-      <div class="demo-feats">
-        <div class="dfeat"><div class="dfeat-icon">🧠</div><div><div class="dfeat-t">Grafo Cerebral 3D Live</div><div class="dfeat-b">6 zonas animadas en tiempo real desde el servidor.</div></div></div>
-        <div class="dfeat"><div class="dfeat-icon">💬</div><div><div class="dfeat-t">Motor Cognitivo 5 Niveles</div><div class="dfeat-b">Detecta tu banda Hz activa y responde en consecuencia.</div></div></div>
-        <div class="dfeat"><div class="dfeat-icon">🔮</div><div><div class="dfeat-t">Contraparte Frecuencial 3D</div><div class="dfeat-b">FFT inversa en tiempo real. Consciente vs inconsciente.</div></div></div>
-        <div class="dfeat"><div class="dfeat-icon">📡</div><div><div class="dfeat-t">Integra Perceptiva</div><div class="dfeat-b">7 perfiles. brain.js entrenada. Predicción de adaptación.</div></div></div>
+      <div>
+        <p style="font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:18px">App PWA — <strong>sin App Store, sin descarga</strong>. Conectada a SOFI live en Render.com.</p>
+        <div class="demo-feats">
+          <div class="dfeat"><div class="dfeat-icon">🧠</div><div><div class="dfeat-t">Grafo Cerebral 3D Live</div><div class="dfeat-b">6 zonas animadas en tiempo real desde el servidor.</div></div></div>
+          <div class="dfeat"><div class="dfeat-icon">💬</div><div><div class="dfeat-t">Motor Cognitivo 5 Niveles</div><div class="dfeat-b">Detecta tu banda Hz activa y responde en consecuencia.</div></div></div>
+          <div class="dfeat"><div class="dfeat-icon">🔮</div><div><div class="dfeat-t">Contraparte Frecuencial 3D</div><div class="dfeat-b">FFT inversa en tiempo real. Consciente vs inconsciente.</div></div></div>
+          <div class="dfeat"><div class="dfeat-icon">📡</div><div><div class="dfeat-t">Integra Perceptiva</div><div class="dfeat-b">7 perfiles. brain.js entrenada. Predicción de adaptación.</div></div></div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </section>
 <div class="divider"></div>
 
 <!-- LIBROS -->
 <section id="libros">
-<div class="si">
-  <div class="reveal">
-    <span class="sl">CONOCIMIENTO PUBLICADO · HOTMART</span>
-    <h2 class="st">Los <span class="g">Libros</span></h2>
-  </div>
-  <div class="books reveal">
-    <div class="book">
-      <div class="book-cover bc1">🌌</div>
-      <div class="book-info">
-        <div class="book-title">El Universo es una Mentira</div>
-        <div class="book-author">Víctor Hugo González Torres · Estigia Bono</div>
-        <div class="book-connection">📖 Origen de la Teoría de los 9 Planos y la Teoría Unificada. La obra que precedió a SOFI.</div>
-        <div class="book-desc">Física cuántica, sabiduría Maya Chan (doña Rosa), Tesla 3-6-9. La primera vez que los 9 planos se ponen en papel.</div>
-        <div class="book-price">Disponible en Hotmart</div>
-        <a href="https://hotm.io/Y7hfD60" class="btn-book" target="_blank">OBTENER →</a>
+  <div class="si">
+    <div class="reveal">
+      <span class="sl">CONOCIMIENTO PUBLICADO · HOTMART</span>
+      <h2 class="st">Los <span class="g">Libros</span></h2>
+    </div>
+    <div class="books reveal">
+      <div class="book">
+        <div class="book-cover bc1">🌌</div>
+        <div class="book-info">
+          <div class="book-title">El Universo es una Mentira</div>
+          <div class="book-author">Víctor Hugo González Torres · Estigia Bono</div>
+          <div class="book-connection">📖 Origen de la Teoría de los 9 Planos y la Teoría Unificada. La obra que precedió a SOFI.</div>
+          <div class="book-desc">Física cuántica, sabiduría Maya Chan (doña Rosa), Tesla 3-6-9. La primera vez que los 9 planos se ponen en papel.</div>
+          <div class="book-price">Disponible en Hotmart</div>
+          <a href="https://hotm.io/Y7hfD60" class="btn-book" target="_blank">OBTENER →</a>
+        </div>
+      </div>
+      <div class="book">
+        <div class="book-cover bc2">📜</div>
+        <div class="book-info">
+          <div class="book-title">El Libro de Enoc: Edición Anotada y Ampliada</div>
+          <div class="book-author">Víctor Hugo González Torres</div>
+          <div class="book-connection">🔗 Conecta con el Postulado 2: imaginación como puente entre planos de frecuencia.</div>
+          <div class="book-desc">El texto apócrifo más importante conectado con física cuántica moderna y cosmología Maya Yucateca.</div>
+          <div class="book-price" style="color:var(--gold)">$197 MXN</div>
+          <a href="https://hotm.io/kBCdsg7" class="btn-book" target="_blank">OBTENER →</a>
+        </div>
+      </div>
+      <div class="book">
+        <div class="book-cover bc3">🏛</div>
+        <div class="book-info">
+          <div class="book-title">Xibalbá</div>
+          <div class="book-author">Víctor Hugo González Torres</div>
+          <div class="book-connection">🔗 El inframundo Maya como navegación de los 9 planos — ficción histórica basada en la teoría.</div>
+          <div class="book-desc">Novela histórica. Chichén Itzá. Los ancestros como guías de frecuencia. Una aventura en los 9 planos.</div>
+          <div class="book-price">Disponible</div>
+          <a href="https://hotm.io/4BcyuGUi" class="btn-book" target="_blank">OBTENER →</a>
+        </div>
       </div>
     </div>
-    <div class="book">
-      <div class="book-cover bc2">📜</div>
-      <div class="book-info">
-        <div class="book-title">El Libro de Enoc: Edición Anotada y Ampliada</div>
-        <div class="book-author">Víctor Hugo González Torres</div>
-        <div class="book-connection">🔗 Conecta con el Postulado 2: imaginación como puente entre planos de frecuencia.</div>
-        <div class="book-desc">El texto apócrifo más importante conectado con física cuántica moderna y cosmología Maya Yucateca.</div>
-        <div class="book-price" style="color:var(--gold)">$197 MXN</div>
-        <a href="https://hotm.io/kBCdsg7" class="btn-book" target="_blank">OBTENER →</a>
-      </div>
-    </div>
-    <div class="book">
-      <div class="book-cover bc3">🏛</div>
-      <div class="book-info">
-        <div class="book-title">Xibalbá</div>
-        <div class="book-author">Víctor Hugo González Torres</div>
-        <div class="book-connection">🔗 El inframundo Maya como navegación de los 9 planos — ficción histórica basada en la teoría.</div>
-        <div class="book-desc">Novela histórica. Chichén Itzá. Los ancestros como guías de frecuencia. Una aventura en los 9 planos.</div>
-        <div class="book-price">Disponible</div>
-        <a href="https://hotm.io/4BcyuGUi" class="btn-book" target="_blank">OBTENER →</a>
+    <div class="buy1 reveal">
+      <div class="buy1-icon">🎁</div>
+      <div>
+        <div class="buy1-t">BUY 1 → SPONSOR 1</div>
+        <div class="buy1-b">Con la compra de cualquier dispositivo <strong style="color:var(--jade)">VIP</strong> de Integra Perceptiva, donamos automáticamente un dispositivo <strong>Standard</strong> a una persona de escasos recursos o institución de Mérida, Yucatán. Tu compra construye el futuro de dos personas.</div>
       </div>
     </div>
   </div>
-  <div class="buy1 reveal">
-    <div class="buy1-icon">🎁</div>
-    <div>
-      <div class="buy1-t">BUY 1 → SPONSOR 1</div>
-      <div class="buy1-b">Con la compra de cualquier dispositivo <strong style="color:var(--jade)">VIP</strong> de Integra Perceptiva, donamos automáticamente un dispositivo <strong>Standard</strong> a una persona de escasos recursos o institución de Mérida, Yucatán. Tu compra construye el futuro de dos personas.</div>
-    </div>
-  </div>
-</div>
 </section>
 <div class="divider"></div>
 
 <!-- INVERSORES -->
 <section id="inversores">
-<div class="si">
-  <div class="reveal">
-    <span class="sl">OPORTUNIDAD DE INVERSIÓN</span>
-    <h2 class="st">Inversionistas<br><span class="g">Ángel</span></h2>
-    <p class="sb">SOFI compite en mercados con valor combinado de <strong>+$305B USD</strong> — construido por <strong>una persona desde Android sin capital</strong>. Hardware diseñado, código live, IP protegida. Solo falta el primer prototipo físico.</p>
-  </div>
-  <div class="market reveal">
-    <div class="mitem"><div class="mval">$5B</div><div class="mlabel">Neurotec</div></div>
-    <div class="mitem"><div class="mval">$80B</div><div class="mlabel">Motor IA</div></div>
-    <div class="mitem"><div class="mval">$200B+</div><div class="mlabel">Humanoides</div></div>
-    <div class="mitem"><div class="mval">$3.7B</div><div class="mlabel">Wearables</div></div>
-    <div class="mitem"><div class="mval">$15B</div><div class="mlabel">Contenido</div></div>
-    <div class="mitem total"><div class="mval">$305B+</div><div class="mlabel">MERCADO TOTAL</div></div>
-  </div>
-  <div class="pitch reveal">
-    <div class="pitch-t">POR QUÉ AHORA — POR QUÉ NOSOTROS</div>
-    <div class="pitch-pts">
-      <div class="pitch-pt">Código live en Render.com. 30 endpoints activos. Servidor Node.js funcionando — tecnología real, sin inversión inicial.</div>
-      <div class="pitch-pt">IP protegida: blockchain OpenTimestamps SHA-256 + INDAUTOR México + RAR fechados. Propiedad intelectual blindada desde 2025.</div>
-      <div class="pitch-pt">Buy1→Sponsor1: cada dispositivo VIP financia uno Standard para personas con discapacidad en Mérida. Impacto social verificable desde día 1.</div>
-      <div class="pitch-pt">5 colecciones definidas: K'in (Down), Neurona Activa (Esquizofrenia), Percepción Clara (Autismo), Foco (TDAH), Oído Claro (Sordera).</div>
-      <div class="pitch-pt">3 libros publicados en Hotmart con afiliados activos. Revenue existente, no proyectado.</div>
-      <div class="pitch-pt">Teoría Unificada + Teoría de los 9 Planos documentadas con referencias académicas. Fundamento científico verificable.</div>
+  <div class="si">
+    <div class="reveal">
+      <span class="sl">OPORTUNIDAD DE INVERSIÓN</span>
+      <h2 class="st">Inversionistas<br><span class="g">Ángel</span></h2>
+      <p class="sb">SOFI compite en mercados con valor combinado de <strong>+$305B USD</strong> — construido por <strong>una persona desde Android sin capital</strong>. Hardware diseñado, código live, IP protegida. Solo falta el primer prototipo físico.</p>
+    </div>
+    <div class="market reveal">
+      <div class="mitem"><div class="mval">$5B</div><div class="mlabel">Neurotec</div></div>
+      <div class="mitem"><div class="mval">$80B</div><div class="mlabel">Motor IA</div></div>
+      <div class="mitem"><div class="mval">$200B+</div><div class="mlabel">Humanoides</div></div>
+      <div class="mitem"><div class="mval">$3.7B</div><div class="mlabel">Wearables</div></div>
+      <div class="mitem"><div class="mval">$15B</div><div class="mlabel">Contenido</div></div>
+      <div class="mitem total"><div class="mval">$305B+</div><div class="mlabel">MERCADO TOTAL</div></div>
+    </div>
+    <div class="pitch reveal">
+      <div class="pitch-t">POR QUÉ AHORA — POR QUÉ NOSOTROS</div>
+      <div class="pitch-pts">
+        <div class="pitch-pt">Código live en Render.com. 30 endpoints activos. Servidor Node.js funcionando — tecnología real, sin inversión inicial.</div>
+        <div class="pitch-pt">IP protegida: blockchain OpenTimestamps SHA-256 + INDAUTOR México + RAR fechados. Propiedad intelectual blindada desde 2025.</div>
+        <div class="pitch-pt">Buy1→Sponsor1: cada dispositivo VIP financia uno Standard para personas con discapacidad en Mérida. Impacto social verificable desde día 1.</div>
+        <div class="pitch-pt">5 colecciones definidas: K'in (Down), Neurona Activa (Esquizofrenia), Percepción Clara (Autismo), Foco (TDAH), Oído Claro (Sordera).</div>
+        <div class="pitch-pt">3 libros publicados en Hotmart con afiliados activos. Revenue existente, no proyectado.</div>
+        <div class="pitch-pt">Teoría Unificada + Teoría de los 9 Planos documentadas con referencias académicas. Fundamento científico verificable.</div>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:24px">
+      <h3 style="font-family:Orbitron,monospace;font-size:10px;letter-spacing:3px;color:var(--gold);margin-bottom:16px">PLATAFORMAS DE INVERSIÓN ÁNGEL</h3>
+      <div class="plat-grid">
+        <a href="https://wellfound.com" target="_blank" class="plat"><div class="plat-n">Wellfound</div><div class="plat-d">Mayor red ángel. Deep tech.</div><span class="plat-tag">GLOBAL</span></a>
+        <a href="https://gust.com" target="_blank" class="plat"><div class="plat-n">Gust</div><div class="plat-d">Inversores ángel verificados.</div><span class="plat-tag">SEED</span></a>
+        <a href="https://www.f6s.com" target="_blank" class="plat"><div class="plat-n">F6S</div><div class="plat-d">Aceleradoras. Activo en MX.</div><span class="plat-tag">LATAM</span></a>
+        <a href="https://500.co" target="_blank" class="plat"><div class="plat-n">500 Global</div><div class="plat-d">VC con presencia LATAM.</div><span class="plat-tag">VC</span></a>
+        <a href="https://startupmexico.com" target="_blank" class="plat"><div class="plat-n">Startup México</div><div class="plat-d">Red ángel local MX.</div><span class="plat-tag">LOCAL</span></a>
+        <a href="https://www.seedstars.com" target="_blank" class="plat"><div class="plat-n">Seedstars</div><div class="plat-d">Mercados emergentes LATAM.</div><span class="plat-tag">EMERGENTES</span></a>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:24px">
+      <h3 style="font-family:Orbitron,monospace;font-size:10px;letter-spacing:3px;color:var(--blue);margin-bottom:16px">COMPARTE — ALCANCE ORGÁNICO</h3>
+      <div class="dist-grid">
+        <div class="dist-card"><div class="dist-icon">📖</div><div class="dist-n">Medium</div><div class="dist-d">Artículos de tech e inversores.</div><a href="https://medium.com" target="_blank" class="dist-link">medium.com →</a></div>
+        <div class="dist-card"><div class="dist-icon">🤖</div><div class="dist-n">Reddit</div><div class="dist-d">r/neurotechnology · r/transhumanism</div><a href="https://reddit.com/r/neurotechnology" target="_blank" class="dist-link">reddit.com →</a></div>
+        <div class="dist-card"><div class="dist-icon">💼</div><div class="dist-n">LinkedIn</div><div class="dist-d">Inversores y ejecutivos LATAM.</div><a href="https://linkedin.com" target="_blank" class="dist-link">linkedin.com →</a></div>
+        <div class="dist-card"><div class="dist-icon">🎙</div><div class="dist-n">Product Hunt</div><div class="dist-d">Early adopters e inversores globales.</div><a href="https://producthunt.com" target="_blank" class="dist-link">producthunt.com →</a></div>
+        <div class="dist-card"><div class="dist-icon">🌐</div><div class="dist-n">Dev.to</div><div class="dist-d">Muestra el servidor SOFI real.</div><a href="https://dev.to" target="_blank" class="dist-link">dev.to →</a></div>
+        <div class="dist-card"><div class="dist-icon">🧵</div><div class="dist-n">X / Twitter</div><div class="dist-d">"Construí neurotecnología desde mi celular."</div><a href="https://x.com" target="_blank" class="dist-link">x.com →</a></div>
+      </div>
     </div>
   </div>
-  <div class="reveal" style="margin-top:24px">
-    <h3 style="font-family:Orbitron,monospace;font-size:10px;letter-spacing:3px;color:var(--gold);margin-bottom:16px">PLATAFORMAS DE INVERSIÓN ÁNGEL</h3>
-    <div class="plat-grid">
-      <a href="https://wellfound.com" target="_blank" class="plat"><div class="plat-n">Wellfound</div><div class="plat-d">Mayor red ángel. Deep tech.</div><span class="plat-tag">GLOBAL</span></a>
-      <a href="https://gust.com" target="_blank" class="plat"><div class="plat-n">Gust</div><div class="plat-d">Inversores ángel verificados.</div><span class="plat-tag">SEED</span></a>
-      <a href="https://www.f6s.com" target="_blank" class="plat"><div class="plat-n">F6S</div><div class="plat-d">Aceleradoras. Activo en MX.</div><span class="plat-tag">LATAM</span></a>
-      <a href="https://500.co" target="_blank" class="plat"><div class="plat-n">500 Global</div><div class="plat-d">VC con presencia LATAM.</div><span class="plat-tag">VC</span></a>
-      <a href="https://startupmexico.com" target="_blank" class="plat"><div class="plat-n">Startup México</div><div class="plat-d">Red ángel local MX.</div><span class="plat-tag">LOCAL</span></a>
-      <a href="https://www.seedstars.com" target="_blank" class="plat"><div class="plat-n">Seedstars</div><div class="plat-d">Mercados emergentes LATAM.</div><span class="plat-tag">EMERGENTES</span></a>
-    </div>
-  </div>
-  <div class="reveal" style="margin-top:24px">
-    <h3 style="font-family:Orbitron,monospace;font-size:10px;letter-spacing:3px;color:var(--blue);margin-bottom:16px">COMPARTE — ALCANCE ORGÁNICO</h3>
-    <div class="dist-grid">
-      <div class="dist-card"><div class="dist-icon">📖</div><div class="dist-n">Medium</div><div class="dist-d">Artículos de tech e inversores.</div><a href="https://medium.com" target="_blank" class="dist-link">medium.com →</a></div>
-      <div class="dist-card"><div class="dist-icon">🤖</div><div class="dist-n">Reddit</div><div class="dist-d">r/neurotechnology · r/transhumanism</div><a href="https://reddit.com/r/neurotechnology" target="_blank" class="dist-link">reddit.com →</a></div>
-      <div class="dist-card"><div class="dist-icon">💼</div><div class="dist-n">LinkedIn</div><div class="dist-d">Inversores y ejecutivos LATAM.</div><a href="https://linkedin.com" target="_blank" class="dist-link">linkedin.com →</a></div>
-      <div class="dist-card"><div class="dist-icon">🎙</div><div class="dist-n">Product Hunt</div><div class="dist-d">Early adopters e inversores globales.</div><a href="https://producthunt.com" target="_blank" class="dist-link">producthunt.com →</a></div>
-      <div class="dist-card"><div class="dist-icon">🌐</div><div class="dist-n">Dev.to</div><div class="dist-d">Muestra el servidor SOFI real.</div><a href="https://dev.to" target="_blank" class="dist-link">dev.to →</a></div>
-      <div class="dist-card"><div class="dist-icon">🧵</div><div class="dist-n">X / Twitter</div><div class="dist-d">"Construí neurotecnología desde mi celular."</div><a href="https://x.com" target="_blank" class="dist-link">x.com →</a></div>
-    </div>
-  </div>
-</div>
 </section>
 <div class="divider"></div>
 
 <!-- DONACIONES -->
 <section id="donaciones">
-<div class="si">
-  <div class="reveal">
-    <span class="sl">APOYA EL PROYECTO DIRECTAMENTE</span>
-    <h2 class="st">Donaciones &<br><span class="a">Apoyo Directo</span></h2>
-    <p class="sb">Cada peso va directo a los primeros prototipos de hardware de Integra Perceptiva. Sin intermediarios. Directo a los componentes reales.</p>
-  </div>
-  <div class="don-grid reveal">
-    <div class="don-card">
-      <div class="don-method">💚 MERCADO PAGO — CLABE</div>
-      <div class="don-detail" id="clabe1">722969017167745283</div>
-      <div class="don-note">Beneficiario: <strong style="color:var(--text)">Victor Hugo Gonzalez Torres</strong><br>Institución: Mercado Pago W</div>
-      <button class="copy-btn" onclick="copyText('722969017167745283','clabe1')">COPIAR CLABE</button>
+  <div class="si">
+    <div class="reveal">
+      <span class="sl">APOYA EL PROYECTO DIRECTAMENTE</span>
+      <h2 class="st">Donaciones &<br><span class="a">Apoyo Directo</span></h2>
+      <p class="sb">Cada peso va directo a los primeros prototipos de hardware de Integra Perceptiva. Sin intermediarios. Directo a los componentes reales.</p>
     </div>
-    <div class="don-card">
-      <div class="don-method">🏦 BANCO AZTECA</div>
-      <div class="don-detail" id="cuenta2">1279100012153095 42</div>
-      <div class="don-note">Victor Hugo Gonzalez Torres<br>Transferencia interbancaria desde cualquier banco MX</div>
-      <button class="copy-btn" onclick="copyText('127910001215309542','cuenta2')">COPIAR CUENTA</button>
+    <div class="don-grid reveal">
+      <div class="don-card">
+        <div class="don-method">💚 MERCADO PAGO — CLABE</div>
+        <div class="don-detail" id="clabe1">722969017167745283</div>
+        <div class="don-note">Beneficiario: <strong style="color:var(--text)">Victor Hugo Gonzalez Torres</strong><br>Institución: Mercado Pago W</div>
+        <button class="copy-btn" onclick="copyText('722969017167745283','clabe1')">COPIAR CLABE</button>
+      </div>
+      <div class="don-card">
+        <div class="don-method">🏦 BANCO AZTECA</div>
+        <div class="don-detail" id="cuenta2">127910001215309542</div>
+        <div class="don-note">Victor Hugo Gonzalez Torres<br>Transferencia interbancaria desde cualquier banco MX</div>
+        <button class="copy-btn" onclick="copyText('127910001215309542','cuenta2')">COPIAR CUENTA</button>
+      </div>
     </div>
-  </div>
-
-  <!-- REDES SOCIALES -->
-  <div class="reveal" style="margin-top:40px">
-    <h3 style="font-family:Orbitron,monospace;font-size:10px;letter-spacing:3px;color:var(--jade);margin-bottom:16px">📲 SÍGUENOS Y COMPARTE</h3>
-    <div class="redes-grid">
-      <a href="https://github.com/estigia920-bit" target="_blank" class="red-card">
-        <div class="red-icon">💻</div>
-        <div class="red-name">GitHub</div>
-        <div class="red-desc">Código abierto · SOFI server</div>
-      </a>
-      <a href="https://sofi-mcpp.onrender.com" target="_blank" class="red-card">
-        <div class="red-icon">🌐</div>
-        <div class="red-name">SOFI Live</div>
-        <div class="red-desc">App en producción 24/7</div>
-      </a>
-      <a href="https://hotm.io/Y7hfD60" target="_blank" class="red-card">
-        <div class="red-icon">📚</div>
-        <div class="red-name">Hotmart</div>
-        <div class="red-desc">Libros · Afiliados activos</div>
-      </a>
-      <a href="https://www.reddit.com/r/neurotechnology" target="_blank" class="red-card">
-        <div class="red-icon">🤖</div>
-        <div class="red-name">Reddit</div>
-        <div class="red-desc">Comunidad neurotec</div>
-      </a>
+    <div class="reveal" style="margin-top:40px">
+      <h3 style="font-family:Orbitron,monospace;font-size:10px;letter-spacing:3px;color:var(--jade);margin-bottom:16px">📲 SÍGUENOS Y COMPARTE</h3>
+      <div class="redes-grid">
+        <a href="https://github.com/estigia920-bit" target="_blank" class="red-card"><div class="red-icon">💻</div><div class="red-name">GitHub</div><div class="red-desc">Código abierto · SOFI server</div></a>
+        <a href="https://sofi-mcpp.onrender.com" target="_blank" class="red-card"><div class="red-icon">🌐</div><div class="red-name">SOFI Live</div><div class="red-desc">App en producción 24/7</div></a>
+        <a href="https://hotm.io/Y7hfD60" target="_blank" class="red-card"><div class="red-icon">📚</div><div class="red-name">Hotmart</div><div class="red-desc">Libros · Afiliados activos</div></a>
+        <a href="https://www.reddit.com/r/neurotechnology" target="_blank" class="red-card"><div class="red-icon">🤖</div><div class="red-name">Reddit</div><div class="red-desc">Comunidad neurotec</div></a>
+      </div>
+    </div>
+    <div style="margin-top:18px;padding:16px;border:1px solid rgba(0,255,200,.14);background:rgba(0,255,200,.03);font-size:12px;color:var(--muted);line-height:1.8" class="reveal">
+      💡 <strong style="color:var(--jade)">Buy1→Sponsor1:</strong> Tu donación construye un dispositivo y patrocina uno para alguien con discapacidad sensorial en Mérida.
     </div>
   </div>
-
-  <div style="margin-top:18px;padding:16px;border:1px solid rgba(0,255,200,.14);background:rgba(0,255,200,.03);font-size:12px;color:var(--muted);line-height:1.8" class="reveal">
-    💡 <strong style="color:var(--jade)">Buy1→Sponsor1:</strong> Tu donación construye un dispositivo y patrocina uno para alguien con discapacidad sensorial en Mérida.
-  </div>
-</div>
 </section>
 <div class="divider"></div>
 
 <!-- SUSCRIPCIONES -->
 <section id="suscripciones">
-<div class="si">
-  <div class="reveal">
-    <span class="sl">ACCESO A SOFI</span>
-    <h2 class="st">Planes de<br><span class="a">Suscripción</span></h2>
+  <div class="si">
+    <div class="reveal">
+      <span class="sl">ACCESO A SOFI</span>
+      <h2 class="st">Planes de<br><span class="a">Suscripción</span></h2>
+    </div>
+    <div class="plans reveal">
+      <div class="plan">
+        <div class="plan-n">EXPLORADOR</div>
+        <div class="plan-p">Gratis</div>
+        <div class="plan-per">para siempre</div>
+        <ul class="plan-feats">
+          <li>App SOFI básica PWA</li>
+          <li>Motor Cognitivo nivel 1-2</li>
+          <li>Grafo Cerebral demo</li>
+          <li>Acceso a libros digitales</li>
+        </ul>
+        <a href="https://sofi-mcpp.onrender.com" target="_blank" class="btn-plan" style="display:block;text-align:center;text-decoration:none">COMENZAR →</a>
+      </div>
+      <div class="plan feat">
+        <div class="plan-n">INTEGRA</div>
+        <div class="plan-p">$197 <span style="font-size:12px">MXN</span></div>
+        <div class="plan-per">por mes</div>
+        <ul class="plan-feats">
+          <li>App SOFI completa</li>
+          <li>Motor Cognitivo 5 niveles</li>
+          <li>Contraparte Frecuencial 3D</li>
+          <li>7 perfiles sensoriales</li>
+          <li>Módulo Sueños + Video</li>
+          <li>API personal</li>
+          <li>Soporte directo con Víctor</li>
+        </ul>
+        <a href="#donaciones" class="btn-plan" style="display:block;text-align:center;text-decoration:none">SUSCRIBIRSE →</a>
+      </div>
+      <div class="plan">
+        <div class="plan-n">INVERSIONISTA</div>
+        <div class="plan-p">$1,500 <span style="font-size:12px">MXN</span></div>
+        <div class="plan-per">mes + participación</div>
+        <ul class="plan-feats">
+          <li>Todo el plan Integra</li>
+          <li>Prototipo Integra (preventa)</li>
+          <li>Token SOFI en Solana</li>
+          <li>Acceso roadmap interno</li>
+          <li>Co-diseño de módulos</li>
+          <li>Crédito en lanzamientos</li>
+        </ul>
+        <a href="#donaciones" class="btn-plan" style="display:block;text-align:center;text-decoration:none">CONTACTAR →</a>
+      </div>
+    </div>
   </div>
-  <div class="plans reveal">
-    <div class="plan">
-      <div class="plan-n">EXPLORADOR</div>
-      <div class="plan-p">Gratis</div>
-      <div class="plan-per">para siempre</div>
-      <ul class="plan-feats">
-        <li>App SOFI básica PWA</li>
-        <li>Motor Cognitivo nivel 1-2</li>
-        <li>Grafo Cerebral demo</li>
-        <li>Acceso a libros digitales</li>
-      </ul>
-      <a href="https://sofi-mcpp.onrender.com" target="_blank" class="btn-plan" style="display:block;text-align:center;text-decoration:none">COMENZAR →</a>
-    </div>
-    <div class="plan feat">
-      <div class="plan-n">INTEGRA</div>
-      <div class="plan-p">$197 <span style="font-size:12px">MXN</span></div>
-      <div class="plan-per">por mes</div>
-      <ul class="plan-feats">
-        <li>App SOFI completa</li>
-        <li>Motor Cognitivo 5 niveles</li>
-        <li>Contraparte Frecuencial 3D</li>
-        <li>7 perfiles sensoriales</li>
-        <li>Módulo Sueños + Video</li>
-        <li>API personal</li>
-        <li>Soporte directo con Víctor</li>
-      </ul>
-      <a href="#donaciones" class="btn-plan" style="display:block;text-align:center;text-decoration:none">SUSCRIBIRSE →</a>
-    </div>
-    <div class="plan">
-      <div class="plan-n">INVERSIONISTA</div>
-      <div class="plan-p">$1,500 <span style="font-size:12px">MXN</span></div>
-      <div class="plan-per">mes + participación</div>
-      <ul class="plan-feats">
-        <li>Todo el plan Integra</li>
-        <li>Prototipo Integra (preventa)</li>
-        <li>Token SOFI en Solana</li>
-        <li>Acceso roadmap interno</li>
-        <li>Co-diseño de módulos</li>
-        <li>Crédito en lanzamientos</li>
-      </ul>
-      <a href="#donaciones" class="btn-plan" style="display:block;text-align:center;text-decoration:none">CONTACTAR →</a>
-    </div>
-  </div>
-</div>
 </section>
 
 <footer>
-  <div style="font-size:22px;opacity:.2;margin-bottom:10px">𓂀 𓃭 𓅓</div>
+  <div style="font-size:22px;opacity:.2;margin-bottom:10px">⬡</div>
   <div class="flogo"><span>SOFI</span> DroidHuman</div>
   <div class="fsub">HaaPpDigitalV · Mérida, Yucatán · Víctor Hugo González Torres · Estigia Bono</div>
   <div class="flinks">
@@ -767,135 +785,93 @@ footer{padding:44px 20px;text-align:center;border-top:1px solid rgba(0,255,200,.
 </footer>
 
 <script>
-// ===== COPY TEXT =====
-function copyText(text, id) {
-  navigator.clipboard.writeText(text).then(function() {
-    var toast = document.getElementById('toast');
-    toast.classList.add('show');
-    setTimeout(function() { toast.classList.remove('show'); }, 2000);
-  }).catch(function() {
-    // fallback
-    var el = document.getElementById(id);
-    var range = document.createRange();
-    range.selectNode(el);
+function copyText(text,id){
+  navigator.clipboard.writeText(text).then(function(){
+    var t=document.getElementById('toast');t.classList.add('show');
+    setTimeout(function(){t.classList.remove('show');},2000);
+  }).catch(function(){
+    var el=document.getElementById(id);var r=document.createRange();
+    r.selectNode(el);window.getSelection().removeAllRanges();
+    window.getSelection().addRange(r);document.execCommand('copy');
     window.getSelection().removeAllRanges();
-    window.getSelection().addRange(range);
-    document.execCommand('copy');
-    window.getSelection().removeAllRanges();
-    var toast = document.getElementById('toast');
-    toast.classList.add('show');
-    setTimeout(function() { toast.classList.remove('show'); }, 2000);
+    var t=document.getElementById('toast');t.classList.add('show');
+    setTimeout(function(){t.classList.remove('show');},2000);
   });
 }
 
-// ===== HZ FLUCTUATION =====
-var baseHz = 12.30;
-function updateHz() {
-  var v = baseHz + (Math.random() - 0.5) * 0.04;
-  var s = v.toFixed(2);
-  var e1 = document.getElementById('hz-val');
-  var e2 = document.getElementById('nav-hz');
-  var e3 = document.getElementById('mini-hz');
-  if(e1) e1.textContent = s;
-  if(e2) e2.textContent = s + ' Hz';
-  if(e3) e3.textContent = s + ' Hz';
-}
-setInterval(updateHz, 1800);
+// Ocultar placeholder cuando imagen carga correctamente
+document.querySelectorAll('.timg-wrap img, .droid-img-wrap img, .droid-img-wrap-main img, .dev-img-wrap img').forEach(function(img){
+  img.addEventListener('load',function(){
+    var fb = img.parentElement.querySelector('.timg-placeholder, .dev-img-fallback');
+    if(fb) fb.style.display='none';
+  });
+});
 
-// ===== HERO CANVAS =====
+var baseHz=12.30;
+function updateHz(){
+  var v=baseHz+(Math.random()-0.5)*0.04;var s=v.toFixed(2);
+  var e1=document.getElementById('hz-val');
+  var e2=document.getElementById('nav-hz');
+  var e3=document.getElementById('mini-hz');
+  if(e1)e1.textContent=s;if(e2)e2.textContent=s+' Hz';if(e3)e3.textContent=s+' Hz';
+}
+setInterval(updateHz,1800);
+
+// HERO CANVAS
 (function(){
-  var c = document.getElementById('hero-canvas');
-  if(!c) return;
-  var ctx = c.getContext('2d');
-  var nodes = [];
-  function resize() { c.width = c.offsetWidth; c.height = c.offsetHeight; }
-  resize();
-  window.addEventListener('resize', resize);
-  for(var i=0;i<60;i++){
-    nodes.push({
-      x: Math.random()*c.width,
-      y: Math.random()*c.height,
-      vx: (Math.random()-0.5)*0.5,
-      vy: (Math.random()-0.5)*0.5,
-      r: Math.random()*2+1
-    });
-  }
+  var c=document.getElementById('hero-canvas');if(!c)return;
+  var ctx=c.getContext('2d');var nodes=[];
+  function resize(){c.width=c.offsetWidth;c.height=c.offsetHeight;}
+  resize();window.addEventListener('resize',resize);
+  for(var i=0;i<60;i++){nodes.push({x:Math.random()*c.width,y:Math.random()*c.height,vx:(Math.random()-0.5)*0.5,vy:(Math.random()-0.5)*0.5,r:Math.random()*2+1});}
   function draw(){
     ctx.clearRect(0,0,c.width,c.height);
     nodes.forEach(function(n){
-      n.x += n.vx; n.y += n.vy;
-      if(n.x<0||n.x>c.width) n.vx*=-1;
-      if(n.y<0||n.y>c.height) n.vy*=-1;
-      ctx.beginPath();
-      ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
-      ctx.fillStyle='rgba(0,255,200,0.6)';
-      ctx.fill();
+      n.x+=n.vx;n.y+=n.vy;
+      if(n.x<0||n.x>c.width)n.vx*=-1;if(n.y<0||n.y>c.height)n.vy*=-1;
+      ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
+      ctx.fillStyle='rgba(0,255,200,0.6)';ctx.fill();
     });
-    nodes.forEach(function(a,i){
-      nodes.forEach(function(b,j){
-        if(i>=j) return;
-        var dx=a.x-b.x, dy=a.y-b.y, dist=Math.sqrt(dx*dx+dy*dy);
-        if(dist<120){
-          ctx.beginPath();
-          ctx.moveTo(a.x,a.y);
-          ctx.lineTo(b.x,b.y);
-          ctx.strokeStyle='rgba(0,255,200,'+(0.15*(1-dist/120))+')';
-          ctx.lineWidth=0.5;
-          ctx.stroke();
-        }
-      });
-    });
+    nodes.forEach(function(a,i){nodes.forEach(function(b,j){
+      if(i>=j)return;var dx=a.x-b.x,dy=a.y-b.y,dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<120){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);
+        ctx.strokeStyle='rgba(0,255,200,'+(0.15*(1-dist/120))+')';ctx.lineWidth=0.5;ctx.stroke();}
+    });});
     requestAnimationFrame(draw);
   }
   draw();
 })();
 
-// ===== QUANTUM CANVAS =====
+// QUANTUM CANVAS
 (function(){
-  var c = document.getElementById('q-canvas');
-  if(!c) return;
-  var ctx = c.getContext('2d');
+  var c=document.getElementById('q-canvas');if(!c)return;
+  var ctx=c.getContext('2d');
   function resize(){c.width=c.offsetWidth;c.height=c.offsetHeight;}
-  resize();
-  var t=0;
+  resize();var t=0;
   function draw(){
-    ctx.fillStyle='rgba(10,21,32,0.15)';
-    ctx.fillRect(0,0,c.width,c.height);
-    var cx=c.width/2, cy=c.height/2;
+    ctx.fillStyle='rgba(10,21,32,0.15)';ctx.fillRect(0,0,c.width,c.height);
+    var cx=c.width/2,cy=c.height/2;
     for(var i=0;i<3;i++){
-      var radius=60+i*30;
-      var speed=0.02*(i+1);
-      var x=cx+Math.cos(t*speed+i*2)*radius;
-      var y=cy+Math.sin(t*speed*1.3+i)*radius*0.6;
-      ctx.beginPath();
-      ctx.arc(x,y,4,0,Math.PI*2);
-      ctx.fillStyle=['rgba(155,89,182,0.8)','rgba(0,255,200,0.8)','rgba(243,156,18,0.8)'][i];
-      ctx.fill();
-      // trail
-      ctx.beginPath();
-      ctx.arc(cx,cy,radius,t*speed+i*2-0.1,t*speed+i*2);
+      var radius=60+i*30;var speed=0.02*(i+1);
+      var x=cx+Math.cos(t*speed+i*2)*radius;var y=cy+Math.sin(t*speed*1.3+i)*radius*0.6;
+      ctx.beginPath();ctx.arc(x,y,4,0,Math.PI*2);
+      ctx.fillStyle=['rgba(155,89,182,0.8)','rgba(0,255,200,0.8)','rgba(243,156,18,0.8)'][i];ctx.fill();
+      ctx.beginPath();ctx.arc(cx,cy,radius,t*speed+i*2-0.1,t*speed+i*2);
       ctx.strokeStyle=['rgba(155,89,182,0.2)','rgba(0,255,200,0.2)','rgba(243,156,18,0.2)'][i];
-      ctx.lineWidth=2;
-      ctx.stroke();
+      ctx.lineWidth=2;ctx.stroke();
     }
-    // center
-    ctx.beginPath();
-    ctx.arc(cx,cy,8+Math.sin(t*0.05)*3,0,Math.PI*2);
-    ctx.fillStyle='rgba(0,255,200,0.4)';
-    ctx.fill();
-    t++;
-    requestAnimationFrame(draw);
+    ctx.beginPath();ctx.arc(cx,cy,8+Math.sin(t*0.05)*3,0,Math.PI*2);
+    ctx.fillStyle='rgba(0,255,200,0.4)';ctx.fill();
+    t++;requestAnimationFrame(draw);
   }
   draw();
 })();
 
-// ===== MINI CANVAS =====
+// MINI CANVAS
 (function(){
-  var c = document.getElementById('mini-canvas');
-  if(!c) return;
-  c.width = c.offsetWidth || 220;
-  c.height = c.offsetHeight || 200;
-  var ctx = c.getContext('2d');
+  var c=document.getElementById('mini-canvas');if(!c)return;
+  c.width=c.offsetWidth||220;c.height=c.offsetHeight||200;
+  var ctx=c.getContext('2d');
   var zones=[
     {x:0.5,y:0.25,label:'PRE',color:'rgba(0,255,200,',val:87},
     {x:0.3,y:0.4,label:'MEM',color:'rgba(52,152,219,',val:73},
@@ -906,57 +882,32 @@ setInterval(updateHz, 1800);
   ];
   var t=0;
   function draw(){
-    ctx.fillStyle='rgba(5,10,16,0.3)';
-    ctx.fillRect(0,0,c.width,c.height);
-    // connections
-    zones.forEach(function(a,i){
-      zones.forEach(function(b,j){
-        if(i>=j) return;
-        ctx.beginPath();
-        ctx.moveTo(a.x*c.width,a.y*c.height);
-        ctx.lineTo(b.x*c.width,b.y*c.height);
-        ctx.strokeStyle='rgba(0,255,200,0.06)';
-        ctx.lineWidth=0.5;
-        ctx.stroke();
-      });
-    });
-    // nodes
+    ctx.fillStyle='rgba(5,10,16,0.3)';ctx.fillRect(0,0,c.width,c.height);
+    zones.forEach(function(a,i){zones.forEach(function(b,j){
+      if(i>=j)return;ctx.beginPath();ctx.moveTo(a.x*c.width,a.y*c.height);
+      ctx.lineTo(b.x*c.width,b.y*c.height);ctx.strokeStyle='rgba(0,255,200,0.06)';ctx.lineWidth=0.5;ctx.stroke();
+    });});
     zones.forEach(function(z,i){
-      var pulse=Math.sin(t*0.05+i)*0.3;
-      var r=10+pulse*3;
-      var alpha=0.4+pulse*0.3;
-      ctx.beginPath();
-      ctx.arc(z.x*c.width,z.y*c.height,r,0,Math.PI*2);
-      ctx.fillStyle=z.color+alpha+')';
-      ctx.fill();
-      ctx.fillStyle='rgba(255,255,255,0.9)';
-      ctx.font='6px Orbitron,monospace';
-      ctx.textAlign='center';
-      ctx.fillText(z.label,z.x*c.width,z.y*c.height+3);
+      var pulse=Math.sin(t*0.05+i)*0.3;var r=10+pulse*3;var alpha=0.4+pulse*0.3;
+      ctx.beginPath();ctx.arc(z.x*c.width,z.y*c.height,r,0,Math.PI*2);
+      ctx.fillStyle=z.color+alpha+')';ctx.fill();
+      ctx.fillStyle='rgba(255,255,255,0.9)';ctx.font='6px Orbitron,monospace';
+      ctx.textAlign='center';ctx.fillText(z.label,z.x*c.width,z.y*c.height+3);
     });
-    t++;
-    requestAnimationFrame(draw);
+    t++;requestAnimationFrame(draw);
   }
   draw();
-  // update stats
   setInterval(function(){
-    var ma=document.getElementById('ma');
-    var mc=document.getElementById('mc');
-    if(ma) ma.textContent=Math.round(80+Math.random()*15)+'%';
-    if(mc) mc.textContent=Math.round(65+Math.random()*20)+'%';
+    var ma=document.getElementById('ma');var mc=document.getElementById('mc');
+    if(ma)ma.textContent=Math.round(80+Math.random()*15)+'%';
+    if(mc)mc.textContent=Math.round(65+Math.random()*20)+'%';
   },3000);
 })();
 
-// ===== REVEAL ON SCROLL =====
-var reveals = document.querySelectorAll('.reveal');
-function checkReveal(){
-  reveals.forEach(function(el){
-    var rect = el.getBoundingClientRect();
-    if(rect.top < window.innerHeight - 80) el.classList.add('v');
-  });
-}
-window.addEventListener('scroll', checkReveal);
-checkReveal();
+// REVEAL ON SCROLL
+var reveals=document.querySelectorAll('.reveal');
+function checkReveal(){reveals.forEach(function(el){var rect=el.getBoundingClientRect();if(rect.top<window.innerHeight-80)el.classList.add('v');});}
+window.addEventListener('scroll',checkReveal);checkReveal();
 </script>
 </body>
 </html>
