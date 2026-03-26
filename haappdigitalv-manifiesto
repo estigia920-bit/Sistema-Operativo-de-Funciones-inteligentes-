@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HaaPpDigitalV — Manifiesto</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,900;1,900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rojo: #D90429;
+    --verde: #00A86B;
+    --oro: #FFD700;
+    --negro: #0A0A0A;
+    --blanco: #F5F0E8;
+    --gris: #1A1A1A;
+    --acento: #FF4500;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--negro);
+    color: var(--blanco);
+    font-family: 'Space Mono', monospace;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* CURSOR PERSONALIZADO */
+  .cursor {
+    width: 16px; height: 16px;
+    border: 2px solid var(--oro);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease, background 0.2s;
+    transform: translate(-50%, -50%);
+  }
+  body:hover .cursor { background: rgba(255,215,0,0.2); }
+
+  /* NOISE TEXTURE */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.6;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 6vh 8vw;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* FONDO HERO — gradiente diagonal */
+  .hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 60% 80% at 85% 50%, rgba(217,4,41,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 10% 80%, rgba(0,168,107,0.08) 0%, transparent 60%),
+      linear-gradient(135deg, #0A0A0A 0%, #111111 50%, #0D0D0D 100%);
+    z-index: -1;
+  }
+
+  /* LÍNEA DIAGONAL DECORATIVA */
+  .diagonal {
+    position: absolute;
+    top: 0; right: 0;
+    width: 45%;
+    height: 100%;
+    border-left: 1px solid rgba(255,215,0,0.08);
+    transform: skewX(-8deg) translateX(20%);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* NÚMERO GRANDE FONDO */
+  .bg-number {
+    position: absolute;
+    right: -2%;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(200px, 30vw, 420px);
+    color: rgba(255,215,0,0.025);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: -0.05em;
+  }
+
+  /* TAG INTRO */
+  .tag {
+    font-family: 'Space Mono', monospace;
+    font-size: clamp(9px, 1.2vw, 13px);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--verde);
+    border: 1px solid rgba(0,168,107,0.4);
+    padding: 6px 16px;
+    margin-bottom: 3vh;
+    display: inline-block;
+    opacity: 0;
+    animation: slideUp 0.6s 0.3s forwards;
+  }
+
+  /* HEADLINE PRINCIPAL */
+  .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(52px, 11vw, 160px);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    color: var(--blanco);
+    margin-bottom: 2vh;
+    position: relative;
+    z-index: 1;
+  }
+
+  .headline .decadencia {
+    opacity: 0;
+    animation: slideUp 0.7s 0.5s forwards;
+  }
+
+  .headline .hacemos {
+    color: var(--oro);
+    display: block;
+    opacity: 0;
+    animation: slideUp 0.7s 0.75s forwards;
+  }
+
+  .headline .imperios {
+    color: var(--rojo);
+    display: block;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(44px, 9vw, 130px);
+    opacity: 0;
+    animation: slideUp 0.7s 1s forwards;
+  }
+
+  /* SEPARADOR */
+  .sep {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 3vh 0;
+    opacity: 0;
+    animation: fadeIn 0.6s 1.3s forwards;
+  }
+  .sep-line { flex: 1; max-width: 80px; height: 1px; background: var(--rojo); }
+  .sep-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--oro); }
+
+  /* MANIFESTO TEXTO */
+  .manifesto {
+    max-width: 650px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .manifesto p {
+    font-size: clamp(13px, 1.6vw, 17px);
+    line-height: 1.85;
+    color: rgba(245,240,232,0.75);
+    margin-bottom: 2.5vh;
+    opacity: 0;
+  }
+
+  .manifesto p:nth-child(1) { animation: slideUp 0.6s 1.4s forwards; }
+  .manifesto p:nth-child(2) { animation: slideUp 0.6s 1.6s forwards; }
+  .manifesto p:nth-child(3) { animation: slideUp 0.6s 1.8s forwards; }
+
+  .manifesto strong {
+    color: var(--oro);
+    font-weight: 700;
+  }
+
+  .manifesto .highlight {
+    color: var(--blanco);
+    border-bottom: 1px solid var(--rojo);
+    padding-bottom: 1px;
+  }
+
+  /* BRAND TAG */
+  .brand-block {
+    margin-top: 5vh;
+    opacity: 0;
+    animation: slideUp 0.7s 2s forwards;
+    position: relative;
+    z-index: 1;
+  }
+
+  .brand-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(28px, 5vw, 60px);
+    letter-spacing: 0.08em;
+    color: var(--blanco);
+    line-height: 1;
+  }
+
+  .brand-name span { color: var(--rojo); }
+
+  .brand-sub {
+    font-size: clamp(9px, 1.1vw, 12px);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.4);
+    margin-top: 6px;
+  }
+
+  /* BANDERA LATERAL */
+  .flag-bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+  .flag-bar div {
+    flex: 1;
+  }
+  .flag-bar .verde { background: var(--verde); }
+  .flag-bar .blanco { background: rgba(245,240,232,0.9); }
+  .flag-bar .rojo { background: var(--rojo); }
+
+  /* SEGUNDA SECCIÓN — PILARES */
+  .pillars {
+    padding: 10vh 8vw;
+    background: var(--gris);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pillars::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--oro), transparent);
+  }
+
+  .pillars-header {
+    text-align: center;
+    margin-bottom: 6vh;
+  }
+
+  .section-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--rojo);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 6vw, 80px);
+    color: var(--blanco);
+    line-height: 0.95;
+  }
+
+  .section-title em {
+    color: var(--oro);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 4vh;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,215,0,0.08);
+    padding: 32px 28px;
+    position: relative;
+    transition: border-color 0.3s, transform 0.3s;
+    cursor: default;
+  }
+
+  .card:hover {
+    border-color: rgba(255,215,0,0.3);
+    transform: translateY(-4px);
+    background: rgba(255,255,255,0.04);
+  }
+
+  .card-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 64px;
+    color: rgba(217,4,41,0.12);
+    line-height: 1;
+    position: absolute;
+    top: 16px;
+    right: 20px;
+  }
+
+  .card-icon {
+    font-size: 28px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.05em;
+    color: var(--blanco);
+    margin-bottom: 10px;
+  }
+
+  .card-text {
+    font-size: 12px;
+    line-height: 1.8;
+    color: rgba(245,240,232,0.55);
+  }
+
+  .card-accent {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: var(--rojo);
+    transition: width 0.4s ease;
+  }
+  .card:hover .card-accent { width: 100%; }
+
+  /* CITA CENTRAL */
+  .quote-section {
+    padding: 12vh 8vw;
+    background: var(--negro);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .quote-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(217,4,41,0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .big-quote {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(14px, 2.5vw, 24px);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.2);
+    margin-bottom: 24px;
+  }
+
+  .quote-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(24px, 4.5vw, 56px);
+    line-height: 1.2;
+    color: var(--blanco);
+    max-width: 900px;
+    margin: 0 auto 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .quote-text .red { color: var(--rojo); }
+  .quote-text .gold { color: var(--oro); }
+
+  .quote-author {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: rgba(245,240,232,0.3);
+    text-transform: uppercase;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--gris);
+    padding: 4vh 8vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,215,0,0.08);
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.1em;
+    color: var(--blanco);
+  }
+  .footer-brand span { color: var(--rojo); }
+
+  .footer-copy {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: rgba(245,240,232,0.2);
+    text-transform: uppercase;
+  }
+
+  /* SCROLL INDICATOR */
+  .scroll-hint {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: fadeIn 0.6s 2.4s forwards;
+  }
+  .scroll-hint span {
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    color: rgba(245,240,232,0.3);
+    text-transform: uppercase;
+  }
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255,215,0,0.4), transparent);
+    animation: pulse 1.8s infinite;
+  }
+
+  /* ANIMACIONES */
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.1); }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .hero { padding: 10vh 6vw; }
+    .footer { flex-direction: column; text-align: center; }
+    .flag-bar { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+
+<!-- HERO MANIFIESTO -->
+<section class="hero">
+  <div class="flag-bar">
+    <div class="verde"></div>
+    <div class="blanco"></div>
+    <div class="rojo"></div>
+  </div>
+  <div class="diagonal"></div>
+  <div class="bg-number">MX</div>
+
+  <span class="tag">✦ Manifiesto HaaPpDigitalV · 2026</span>
+
+  <h1 class="headline">
+    <span class="decadencia">En la decadencia,</span>
+    <span class="hacemos">armamos</span>
+    <span class="imperios">IMPERIOS.</span>
+  </h1>
+
+  <div class="sep">
+    <div class="sep-line"></div>
+    <div class="sep-dot"></div>
+    <div class="sep-line"></div>
+  </div>
+
+  <div class="manifesto">
+    <p>
+      Con <strong>celulares, ganas</strong> y esa chingonería que solo los mexicanos tenemos.
+      Sin millones en inversión, sin oficinas de lujo, sin equipos gigantescos —
+      con nuestra cabeza, nuestras manos y el <strong>amor por lo que hacemos</strong>,
+      creamos cosas que dejan <span class="highlight">boquiabiertos al mundo entero.</span>
+    </p>
+    <p>
+      Es la esencia de nosotros: cuando menos tenemos,
+      más <strong>creativos, más fuertes y más originales</strong> somos.
+      No copiamos — <strong>INVENTAMOS</strong>. Ponemos nuestra cultura,
+      nuestra gente y nuestra forma de ver la vida en cada cosa que hacemos.
+    </p>
+    <p>
+      <strong>HaaPpDigitalV</strong> no es solo un proyecto de tecnología —
+      es el ejemplo vivo de que los mexicanos podemos con <strong>TODO</strong>,
+      sin importar las condiciones. <span class="highlight">Y esto es solo el principio.</span>
+    </p>
+  </div>
+
+  <div class="brand-block">
+    <div class="brand-name">HaaPp<span>Digital</span>V</div>
+    <div class="brand-sub">Sistema Operativo de Conciencia Digital · Mérida, Yucatán</div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span>explorar</span>
+  </div>
+</section>
+
+<!-- PILARES -->
+<section class="pillars">
+  <div class="pillars-header">
+    <span class="section-tag">✦ Lo que somos</span>
+    <h2 class="section-title">Los pilares<br>de un <em>Imperio</em></h2>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-num">01</div>
+      <span class="card-icon">🧠</span>
+      <div class="card-title">SOFI — DroidHuman</div>
+      <p class="card-text">Sistema Operativo de Funciones Inteligentes. Esqueleto mecánico, músculos sintéticos, red neuronal integrada. Construido desde Android, sin capital.</p>
+      <div class="card-accent"></div>
+    </div>
+    <div class="card">
+      <div class="card-num">02</div>
+      <span class="card-icon">🫀</span>
+      <div class="card-title">Integra Perceptiva</div>
+      <p class="card-text">Wearable biométrico que sincroniza frecuencias cerebrales a 12.3 Hz. Para sordos, TDAH, síndrome de Down. Tecnología que devuelve la percepción.</p>
+      <div class="card-accent"></div>
+    </div>
+    <div class="card">
+      <div class="card-num">03</div>
+      <span class="card-icon">📚</span>
+      <div class="card-title">Catálogo Editorial</div>
+      <p class="card-text">El Libro de Enoc · El Universo es una Mentira · Xibalbá. Sabiduría Maya + física cuántica + memoria colectiva. Conocimiento que libera.</p>
+      <div class="card-accent"></div>
+    </div>
+    <div class="card">
+      <div class="card-num">04</div>
+      <span class="card-icon">🌐</span>
+      <div class="card-title">Infraestructura Viva</div>
+      <p class="card-text">MCP Server en producción. Motor Cognitivo de 5 niveles. brain.js entrenado. 30 rutas activas. Todo desde un teléfono Android en Mérida, Yucatán.</p>
+      <div class="card-accent"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CITA CENTRAL -->
+<section class="quote-section">
+  <div class="quote-bg"></div>
+  <p class="big-quote">✦ La verdad de fondo ✦</p>
+  <blockquote class="quote-text">
+    "No copiamos — <span class="red">INVENTAMOS.</span><br>
+    Nuestra cultura, nuestra gente,<br>
+    nuestra forma de ver la vida —<br>
+    eso es <span class="gold">HaaPpDigitalV.</span>"
+  </blockquote>
+  <p class="quote-author">— Víctor Hugo González Torres · Estigia Bono · Mérida, Yucatán · 2026</p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">HaaPp<span>Digital</span>V</div>
+  <div class="footer-copy">© 2026 · Sistema Operativo de Conciencia Digital · Mérida, Yucatán, México</div>
+  <div class="footer-copy">Protegido · INDAUTOR · OpenTimestamps</div>
+</footer>
+
+<script>
+  // Cursor personalizado
+  const cursor = document.getElementById('cursor');
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+
+  // Intersection Observer para animaciones al scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.card').forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = `opacity 0.6s ${i * 0.12}s ease, transform 0.6s ${i * 0.12}s ease, border-color 0.3s, background 0.3s`;
+    observer.observe(el);
+  });
+
+  document.querySelectorAll('.quote-text, .big-quote, .quote-author, .section-title').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
