@@ -155,7 +155,7 @@ section{position:relative;z-index:2}
 .dfeat-t{font-size:12px;font-weight:600;color:var(--jade);margin-bottom:3px}
 .dfeat-b{font-size:11px;color:var(--muted);line-height:1.5}
 .books{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:44px}
-.book{background:var(--bg2);border:1px solid rgba(243,156,18,.2);overflow:hidden;transition:.4s}
+.book{background:var(--bg2);border:1px solid rgba(243,156,18,.2);overflow:hidden;transition:.4f}
 .book:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(243,156,18,.08)}
 .book-cover{height:170px;display:flex;align-items:center;justify-content:center;font-size:64px;position:relative}
 .bc1{background:linear-gradient(135deg,#08031a,#150828)}.bc2{background:linear-gradient(135deg,#0a0802,#1a1205)}.bc3{background:linear-gradient(135deg,#020a0a,#051520)}
@@ -228,12 +228,21 @@ footer{padding:44px 20px;text-align:center;border-top:1px solid rgba(0,255,200,.
 .conexion-flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .cf-item{padding:6px 12px;background:rgba(255,83,51,.08);border:1px solid rgba(255,83,51,.3);color:var(--red);font-size:10px;font-family:"Orbitron",monospace;letter-spacing:1px}
 .cf-arrow{color:var(--red);font-size:18px;font-weight:bold}
-.redes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:28px}
+.redes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:28px}
 .red-card{padding:16px;border:1px solid rgba(0,255,200,.15);background:rgba(0,255,200,.03);text-decoration:none;display:flex;flex-direction:column;align-items:center;gap:8px;transition:.3s}
 .red-card:hover{border-color:var(--jade);background:rgba(0,255,200,.08);transform:translateY(-3px)}
 .red-icon{font-size:28px}
 .red-name{font-family:"Orbitron",monospace;font-size:9px;color:var(--jade);letter-spacing:2px}
 .red-desc{font-size:10px;color:var(--muted);text-align:center;line-height:1.4}
+/* Redes sociales colores */
+.red-card.fb:hover{border-color:#1877f2;background:rgba(24,119,242,.08)}
+.red-card.fb .red-name{color:#1877f2}
+.red-card.tt:hover{border-color:#ff0050;background:rgba(255,0,80,.08)}
+.red-card.tt .red-name{color:#ff0050}
+.red-card.yt:hover{border-color:#ff0000;background:rgba(255,0,0,.08)}
+.red-card.yt .red-name{color:#ff0000}
+.red-card.xc:hover{border-color:#e7e9ea;background:rgba(231,233,234,.08)}
+.red-card.xc .red-name{color:#e7e9ea}
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
 @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.3);opacity:.5}}
@@ -335,22 +344,14 @@ footer{padding:44px 20px;text-align:center;border-top:1px solid rgba(0,255,200,.
       <div class="post"><div class="pn">05</div><div class="pt">Contraparte Frecuencial</div><div class="pb">Toda señal observable tiene una frecuencia inversa procesada bajo el umbral consciente. Medir ambas da la imagen neurológica completa. Este es el fundamento del Módulo Contraparte de SOFI — ya corriendo en producción.</div></div>
       <div class="post post6"><div class="pn">06</div><div class="pt">Teletransporte Frecuencial</div><div class="pb">Si captamos las frecuencias del punto A y del punto B, podemos geolocalizarlas energéticamente y <em style="color:var(--red)">estimular el salto cuántico controlado</em>. No esperarlo — provocarlo. Misma lógica que los mayas usaron en Uxmal para mover piedras. <span style="color:var(--red)">↓ Ver aplicación completa</span></div></div>
     </div>
-    <!-- ============================================================
-         IMÁGENES TEORÍA
-         ARCHIVOS NECESARIOS EN /img/:
-           img/dashboard-sofi.jpg   → PDF página 4 (pantalla 12.3Hz)
-           img/diagrama-khuhul.jpg  → PDF página 11 (diagrama Tierra-Humano-K'uhul)
-         ============================================================ -->
     <div class="teoria-imgs reveal">
       <div class="timg-wrap">
-        <img src="./Img/dashboard-sofi.jpg" alt="12.3 Hz Dashboard SOFI"
-             onerror="this.style.display='none'">
+        <img src="./Img/dashboard-sofi.jpg" alt="12.3 Hz Dashboard SOFI" onerror="this.style.display='none'">
         <div class="timg-placeholder" id="ph-dash">📡</div>
         <div class="timg-label">12.3 HZ DASHBOARD · SOFI LIVE</div>
       </div>
       <div class="timg-wrap">
-        <img src="./Img/diagrama-khuhul.jpg" alt="Diagrama integrativo Tierra-Humano-K'uhul"
-             onerror="this.style.display='none'">
+        <img src="./Img/diagrama-khuhul.jpg" alt="Diagrama integrativo Tierra-Humano-K'uhul" onerror="this.style.display='none'">
         <div class="timg-placeholder" id="ph-integra">🌌</div>
         <div class="timg-label">INTEGRA PERCEPTIVA · RED SENSORIAL</div>
       </div>
@@ -369,29 +370,10 @@ footer{padding:44px 20px;text-align:center;border-top:1px solid rgba(0,255,200,.
     </div>
     <div class="droid-hero reveal">
       <div class="droid-imgs">
-        <!-- ============================================================
-             IMÁGENES DROIDHUMAN
-             ARCHIVOS NECESARIOS EN /img/:
-               img/sofi-muscular.jpg   → PDF página 1 (blueprint muscular anatómico)
-               img/sofi-blueprint.jpg  → PDF página 3 (blueprint técnico completo)
-               img/sofi-piel.jpg       → PDF página 2 (piel colágeno sintético)
-             ============================================================ -->
-        <div class="droid-img-wrap-main">
-          🦾
-          <img src="./Img/sofi-muscular.jpg" alt="SOFI DroidHuman — Músculos sintéticos MAXON"
-               onerror="this.style.display='none'">
-        </div>
+        <div class="droid-img-wrap-main">🦾<img src="./Img/sofi-muscular.jpg" alt="SOFI DroidHuman — Músculos sintéticos MAXON" onerror="this.style.display='none'"></div>
         <div class="droid-img-row">
-          <div class="droid-img-wrap">
-            📐
-            <img src="./Img/sofi-blueprint.jpg" alt="SOFI DroidHuman — Blueprint técnico"
-                 onerror="this.style.display='none'">
-          </div>
-          <div class="droid-img-wrap">
-            🧬
-            <img src="./Img/sofi-piel.jpg" alt="SOFI DroidHuman — Piel colágeno sintético"
-                 onerror="this.style.display='none'">
-          </div>
+          <div class="droid-img-wrap">📐<img src="./Img/sofi-blueprint.jpg" alt="SOFI DroidHuman — Blueprint técnico" onerror="this.style.display='none'"></div>
+          <div class="droid-img-wrap">🧬<img src="./Img/sofi-piel.jpg" alt="SOFI DroidHuman — Piel colágeno sintético" onerror="this.style.display='none'"></div>
         </div>
       </div>
       <div>
@@ -466,16 +448,6 @@ footer{padding:44px 20px;text-align:center;border-top:1px solid rgba(0,255,200,.
       <div class="stat"><div class="stat-v">7</div><div class="stat-l">Perfiles</div></div>
       <div class="stat"><div class="stat-v">5</div><div class="stat-l">Dispositivos</div></div>
     </div>
-    <!-- ============================================================
-         GALERÍA DISPOSITIVOS INTEGRA PERCEPTIVA
-         ARCHIVOS NECESARIOS EN /img/:
-           img/pulsera-kin.jpg           → PDF pág 7  (pulsera K'IN MAX30102 verde)
-           img/pulsera-kin-verde.jpg     → PDF pág 7  (variante verde esmeralda)
-           img/baston-completo.jpg       → PDF pág 5  (bastón inteligente vista completa)
-           img/baston-circuito.jpg       → PDF pág 6  (bastón detalle circuitería)
-           img/auriculares.jpg           → PDF pág 8  (auriculares binaural blueprint)
-           img/colgante-lino-rosegold.jpg → PDF pág 13 (colgante LINO rose gold)
-         ============================================================ -->
     <div class="dev-gallery reveal">
       <div class="dev-card">
         <div class="dev-img-wrap" style="background:linear-gradient(135deg,#0a1520,#051a10)">
@@ -517,7 +489,7 @@ footer{padding:44px 20px;text-align:center;border-top:1px solid rgba(0,255,200,.
           <span class="dev-img-fallback">💎</span>
           <img src="./Img/colgante-lino-rosegold.jpg" alt="Colgante LINO rose gold" onerror="this.style.display='none'">
         </div>
-        <div class="dev-info"><div class="dev-name">COLGANTE LINO</div><div class="dev-desc">Rose gold. Sensor MAS0104. LiPo visible. USB-C. Monitoreo pasivo continuo.</div><div class="dev-badge">WEARABLE · PASIVO</div></div>
+        <div class="dev-info"><div class="dev-name">COLGANTE LINO</div><div class="dev-desc">Rose gold. Sensor MAX30102. LiPo visible. USB-C. Monitoreo pasivo continuo.</div><div class="dev-badge">WEARABLE · PASIVO</div></div>
       </div>
     </div>
     <div class="chips reveal">
@@ -673,7 +645,7 @@ footer{padding:44px 20px;text-align:center;border-top:1px solid rgba(0,255,200,.
         <div class="dist-card"><div class="dist-icon">💼</div><div class="dist-n">LinkedIn</div><div class="dist-d">Inversores y ejecutivos LATAM.</div><a href="https://linkedin.com" target="_blank" class="dist-link">linkedin.com →</a></div>
         <div class="dist-card"><div class="dist-icon">🎙</div><div class="dist-n">Product Hunt</div><div class="dist-d">Early adopters e inversores globales.</div><a href="https://producthunt.com" target="_blank" class="dist-link">producthunt.com →</a></div>
         <div class="dist-card"><div class="dist-icon">🌐</div><div class="dist-n">Dev.to</div><div class="dist-d">Muestra el servidor SOFI real.</div><a href="https://dev.to" target="_blank" class="dist-link">dev.to →</a></div>
-        <div class="dist-card"><div class="dist-icon">🧵</div><div class="dist-n">X / Twitter</div><div class="dist-d">"Construí neurotecnología desde mi celular."</div><a href="https://x.com" target="_blank" class="dist-link">x.com →</a></div>
+        <div class="dist-card"><div class="dist-icon">🧵</div><div class="dist-n">X / Twitter</div><div class="dist-d">"Construí neurotecnología desde mi celular."</div><a href="https://x.com/Victorhugo91408" target="_blank" class="dist-link">@Victorhugo91408 →</a></div>
       </div>
     </div>
   </div>
@@ -702,15 +674,59 @@ footer{padding:44px 20px;text-align:center;border-top:1px solid rgba(0,255,200,.
         <button class="copy-btn" onclick="copyText('127910001215309542','cuenta2')">COPIAR CUENTA</button>
       </div>
     </div>
+
+    <!-- ===== REDES SOCIALES — TODOS LOS LINKS REALES ===== -->
     <div class="reveal" style="margin-top:40px">
       <h3 style="font-family:Orbitron,monospace;font-size:10px;letter-spacing:3px;color:var(--jade);margin-bottom:16px">📲 SÍGUENOS Y COMPARTE</h3>
       <div class="redes-grid">
-        <a href="https://github.com/estigia920-bit" target="_blank" class="red-card"><div class="red-icon">💻</div><div class="red-name">GitHub</div><div class="red-desc">Código abierto · SOFI server</div></a>
-        <a href="https://sofi-mcpp.onrender.com" target="_blank" class="red-card"><div class="red-icon">🌐</div><div class="red-name">SOFI Live</div><div class="red-desc">App en producción 24/7</div></a>
-        <a href="https://hotm.io/Y7hfD60" target="_blank" class="red-card"><div class="red-icon">📚</div><div class="red-name">Hotmart</div><div class="red-desc">Libros · Afiliados activos</div></a>
-        <a href="https://www.reddit.com/r/neurotechnology" target="_blank" class="red-card"><div class="red-icon">🤖</div><div class="red-name">Reddit</div><div class="red-desc">Comunidad neurotec</div></a>
+        <a href="https://github.com/estigia920-bit" target="_blank" class="red-card">
+          <div class="red-icon">💻</div>
+          <div class="red-name">GitHub</div>
+          <div class="red-desc">Código abierto · SOFI server</div>
+        </a>
+        <a href="https://sofi-mcpp.onrender.com" target="_blank" class="red-card">
+          <div class="red-icon">🌐</div>
+          <div class="red-name">SOFI Live</div>
+          <div class="red-desc">App en producción 24/7</div>
+        </a>
+        <a href="https://www.facebook.com/share/1GnDcYzhqo/" target="_blank" class="red-card fb">
+          <div class="red-icon">📘</div>
+          <div class="red-name">Facebook</div>
+          <div class="red-desc">HaaPpDigitalV · SOFI</div>
+        </a>
+        <a href="https://vt.tiktok.com/ZSusEsn96/" target="_blank" class="red-card tt">
+          <div class="red-icon">🎵</div>
+          <div class="red-name">TikTok</div>
+          <div class="red-desc">Contenido SOFI · Enoc</div>
+        </a>
+        <a href="https://youtube.com/shorts/KET9RLEBqfo?si=fVdEEluJ6Uap2SoZ" target="_blank" class="red-card yt">
+          <div class="red-icon">▶️</div>
+          <div class="red-name">YouTube</div>
+          <div class="red-desc">Demo SOFI · Video 1</div>
+        </a>
+        <a href="https://youtube.com/shorts/eaqFo0sLyGI?si=DFSTf7ONCP4cpe4K" target="_blank" class="red-card yt">
+          <div class="red-icon">🎬</div>
+          <div class="red-name">YouTube</div>
+          <div class="red-desc">Demo SOFI · Video 2</div>
+        </a>
+        <a href="https://x.com/Victorhugo91408" target="_blank" class="red-card xc">
+          <div class="red-icon">✖️</div>
+          <div class="red-name">X / Twitter</div>
+          <div class="red-desc">@Victorhugo91408</div>
+        </a>
+        <a href="https://hotm.io/Y7hfD60" target="_blank" class="red-card">
+          <div class="red-icon">📚</div>
+          <div class="red-name">Hotmart</div>
+          <div class="red-desc">Libros · Afiliados activos</div>
+        </a>
+        <a href="https://www.reddit.com/r/neurotechnology" target="_blank" class="red-card">
+          <div class="red-icon">🤖</div>
+          <div class="red-name">Reddit</div>
+          <div class="red-desc">Comunidad neurotec</div>
+        </a>
       </div>
     </div>
+
     <div style="margin-top:18px;padding:16px;border:1px solid rgba(0,255,200,.14);background:rgba(0,255,200,.03);font-size:12px;color:var(--muted);line-height:1.8" class="reveal">
       💡 <strong style="color:var(--jade)">Buy1→Sponsor1:</strong> Tu donación construye un dispositivo y patrocina uno para alguien con discapacidad sensorial en Mérida.
     </div>
@@ -778,8 +794,13 @@ footer{padding:44px 20px;text-align:center;border-top:1px solid rgba(0,255,200,.
   <div class="flinks">
     <a href="#teoria">Teoría</a><a href="#droid">DroidHuman</a><a href="#teleport">Teletransporte</a>
     <a href="#integra">Integra</a><a href="#libros">Libros</a><a href="#inversores">Inversores</a>
-    <a href="#donaciones">Apoyar</a><a href="https://github.com/estigia920-bit" target="_blank">GitHub</a>
+    <a href="#donaciones">Apoyar</a>
+    <a href="https://github.com/estigia920-bit" target="_blank">GitHub</a>
     <a href="https://sofi-mcpp.onrender.com" target="_blank">SOFI Live</a>
+    <a href="https://www.facebook.com/share/1GnDcYzhqo/" target="_blank">Facebook</a>
+    <a href="https://vt.tiktok.com/ZSusEsn96/" target="_blank">TikTok</a>
+    <a href="https://x.com/Victorhugo91408" target="_blank">X / Twitter</a>
+    <a href="https://youtube.com/shorts/KET9RLEBqfo?si=fVdEEluJ6Uap2SoZ" target="_blank">YouTube</a>
   </div>
   <div class="fcopy">© 2025-2026 HaaPpDigitalV · IP Protegida: OpenTimestamps SHA-256 · INDAUTOR México<br>Categoría propia: Sistema Operativo de Conciencia Digital · 12.3 Hz K'uhul Maya</div>
 </footer>
@@ -798,15 +819,12 @@ function copyText(text,id){
     setTimeout(function(){t.classList.remove('show');},2000);
   });
 }
-
-// Ocultar placeholder cuando imagen carga correctamente
-document.querySelectorAll('.timg-wrap img, .droid-img-wrap img, .droid-img-wrap-main img, .dev-img-wrap img').forEach(function(img){
+document.querySelectorAll('.timg-wrap img,.droid-img-wrap img,.droid-img-wrap-main img,.dev-img-wrap img').forEach(function(img){
   img.addEventListener('load',function(){
-    var fb = img.parentElement.querySelector('.timg-placeholder, .dev-img-fallback');
-    if(fb) fb.style.display='none';
+    var fb=img.parentElement.querySelector('.timg-placeholder,.dev-img-fallback');
+    if(fb)fb.style.display='none';
   });
 });
-
 var baseHz=12.30;
 function updateHz(){
   var v=baseHz+(Math.random()-0.5)*0.04;var s=v.toFixed(2);
@@ -816,7 +834,6 @@ function updateHz(){
   if(e1)e1.textContent=s;if(e2)e2.textContent=s+' Hz';if(e3)e3.textContent=s+' Hz';
 }
 setInterval(updateHz,1800);
-
 // HERO CANVAS
 (function(){
   var c=document.getElementById('hero-canvas');if(!c)return;
@@ -835,13 +852,12 @@ setInterval(updateHz,1800);
     nodes.forEach(function(a,i){nodes.forEach(function(b,j){
       if(i>=j)return;var dx=a.x-b.x,dy=a.y-b.y,dist=Math.sqrt(dx*dx+dy*dy);
       if(dist<120){ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);
-        ctx.strokeStyle='rgba(0,255,200,'+(0.15*(1-dist/120))+')';ctx.lineWidth=0.5;ctx.stroke();}
+      ctx.strokeStyle='rgba(0,255,200,'+(0.15*(1-dist/120))+')';ctx.lineWidth=0.5;ctx.stroke();}
     });});
     requestAnimationFrame(draw);
   }
   draw();
 })();
-
 // QUANTUM CANVAS
 (function(){
   var c=document.getElementById('q-canvas');if(!c)return;
@@ -866,7 +882,6 @@ setInterval(updateHz,1800);
   }
   draw();
 })();
-
 // MINI CANVAS
 (function(){
   var c=document.getElementById('mini-canvas');if(!c)return;
@@ -903,7 +918,6 @@ setInterval(updateHz,1800);
     if(mc)mc.textContent=Math.round(65+Math.random()*20)+'%';
   },3000);
 })();
-
 // REVEAL ON SCROLL
 var reveals=document.querySelectorAll('.reveal');
 function checkReveal(){reveals.forEach(function(el){var rect=el.getBoundingClientRect();if(rect.top<window.innerHeight-80)el.classList.add('v');});}
